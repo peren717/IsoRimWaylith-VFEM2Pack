@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- IsoRim Waylith models for Vanilla Factions Expanded - Medieval 2 buildings, batch 1 (Grok, coop deliveries
+       20261019-1627 VFEM2_Batch1 and 20261019-1635 VFEM2_FramesFix for the six door/gate frames).
+       Format: IsoRim's own Defs\Models.xml (see its header). Paths are relative to this mod's folder.
+       stuff* materials take the building's stuff colour; everything else keeps its own colour.
+       A thingDef that is not loaded is skipped quietly by IsoRim. -->
+
+  <!-- Beds: built head north like IsoRim's bed.obj, turned round as it is (rotation 180). -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_FurBed</defName>
+    <thingDef>VFEM2_FurBed</thingDef>
+    <model>Models/vfem2_fur_bed.obj</model>
+    <builtFor>(1, 2)</builtFor>
+    <rotation>180</rotation>
+    <beddingTop>0.56</beddingTop>
+    <surfaceHeight>0.48</surfaceHeight>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_DoubleFurBed</defName>
+    <thingDef>VFEM2_DoubleFurBed</thingDef>
+    <model>Models/vfem2_double_fur_bed.obj</model>
+    <builtFor>(2, 2)</builtFor>
+    <rotation>180</rotation>
+    <beddingTop>0.56</beddingTop>
+    <surfaceHeight>0.48</surfaceHeight>
+  </IsoRim.ModelDef>
+
+  <!-- Hearths: no flame in the model; IsoRim's live flame burns on the log bed while there is fuel (flameAt / flameSize:
+       foot of the flame and its height, width). The darklight hearth shares the model; its flame is the darklight blue. -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Hearth</defName>
+    <thingDef>VFEM2_Hearth</thingDef>
+    <model>Models/vfem2_hearth.obj</model>
+    <builtFor>(2, 1)</builtFor>
+    <flameAt>(0, 0.20, -0.07)</flameAt>
+    <flameSize>(0.85, 0.75)</flameSize>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_HearthDarklight</defName>
+    <thingDef>VFEM2_HearthDarklight</thingDef>
+    <model>Models/vfem2_hearth.obj</model>
+    <builtFor>(2, 1)</builtFor>
+    <flameAt>(0, 0.20, -0.07)</flameAt>
+    <flameSize>(0.85, 0.75)</flameSize>
+  </IsoRim.ModelDef>
+
+  <!-- Heraldic standing banner: the cloth (banner_cloth_tint) stays white; the game's flat heraldry sprites are left out
+       while the model stands in (the pack's assembly). -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_StandingBanner</defName>
+    <thingDef>VFEM2_StandingBanner</thingDef>
+    <model>Models/vfem2_standing_banner.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_AutofillShelf</defName>
+    <thingDef>VFEM2_AutofillShelf</thingDef>
+    <model>Models/vfem2_autofill_shelf.obj</model>
+    <builtFor>(2, 1)</builtFor>
+    <surfaceHeight>1.05</surfaceHeight>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_ArcheryTarget</defName>
+    <thingDef>VFEM2_ArcheryTarget</thingDef>
+    <model>Models/vfem2_archery_target.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_TrainingDummy</defName>
+    <thingDef>VFEM2_TrainingDummy</thingDef>
+    <model>Models/vfem2_training_dummy.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <!-- Leather boilpot: empty pot; the "full" model (a brew in the pot) while the VE processor is working or done
+       (byState, the state given by the pack's assembly). -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_LeatherBoilpot</defName>
+    <thingDef>VFEM2_LeatherBoilpot</thingDef>
+    <model>Models/vfem2_leather_boilpot_empty.obj</model>
+    <byState>
+      <li>
+        <state>full</state>
+        <model>Models/vfem2_leather_boilpot_full.obj</model>
+      </li>
+    </byState>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_MeadFermentingBarrel</defName>
+    <thingDef>VFEM2_MeadFermentingBarrel</thingDef>
+    <model>Models/vfem2_mead_barrel.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_WineBarrel</defName>
+    <thingDef>VFEM2_WineBarrel</thingDef>
+    <model>Models/vfem2_wine_barrel.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Apiary</defName>
+    <thingDef>VFEM2_Apiary</thingDef>
+    <model>Models/vfem2_apiary.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <!-- Draught labs: work face south (as the game's interaction cell for a bench facing north). -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_AlchemicalWorkbench</defName>
+    <thingDef>VFEM2_AlchemicalWorkbench</thingDef>
+    <model>Models/vfem2_draught_lab.obj</model>
+    <builtFor>(3, 1)</builtFor>
+    <surfaceHeight>0.80</surfaceHeight>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_AlchemicalWorkbench_Electric</defName>
+    <thingDef>VFEM2_AlchemicalWorkbench_Electric</thingDef>
+    <model>Models/vfem2_draught_lab_electric.obj</model>
+    <builtFor>(3, 1)</builtFor>
+    <surfaceHeight>0.80</surfaceHeight>
+  </IsoRim.ModelDef>
+
+  <!-- Wall-mounted arbalest / arquebus: as the game draws them, the base is a piece of low castle wall (no model: IsoRim's
+       wall block from the game's own atlas, fillPercent 0.4 of the wall height, joined to the walls beside it); the gun
+       turns on top of it. topHeight is the block's top at the default walls (0.4 x 1.2); wallFit keeps it there at any
+       wall height. -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Turret_WallMountedArbalest</defName>
+    <thingDef>VFEM2_Turret_WallMountedArbalest</thingDef>
+    <topModel>Models/vfem2_arbalest_turret_gun.obj</topModel>
+    <topHeight>0.48</topHeight>
+    <wallFit>1.2</wallFit>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Turret_WallMountedArquebus</defName>
+    <thingDef>VFEM2_Turret_WallMountedArquebus</thingDef>
+    <topModel>Models/vfem2_arquebus_turret_gun.obj</topModel>
+    <topHeight>0.48</topHeight>
+    <wallFit>1.2</wallFit>
+  </IsoRim.ModelDef>
+
+  <!-- Castle doors (Building_MultiTileDoor): fixed stone frame, two leaves (one modelled, the other the same turned
+       half round) sliding apart into the walls as far as the game slides its own (Doors.DrawWide). -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_2x1CastleDoor</defName>
+    <thingDef>VFEM2_2x1CastleDoor</thingDef>
+    <model>Models/vfem2_castle_door_2x1_frame.obj</model>
+    <doorLeafModel>Models/vfem2_castle_door_2x1_leaf.obj</doorLeafModel>
+    <builtFor>(2, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_3x1CastleDoor</defName>
+    <thingDef>VFEM2_3x1CastleDoor</thingDef>
+    <model>Models/vfem2_castle_door_3x1_frame.obj</model>
+    <doorLeafModel>Models/vfem2_castle_door_3x1_leaf.obj</doorLeafModel>
+    <builtFor>(3, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_4x1CastleDoor</defName>
+    <thingDef>VFEM2_4x1CastleDoor</thingDef>
+    <model>Models/vfem2_castle_door_4x1_frame.obj</model>
+    <doorLeafModel>Models/vfem2_castle_door_4x1_leaf.obj</doorLeafModel>
+    <builtFor>(4, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <!-- Castle gates: the same frame, one iron portcullis across the doorway that rises as the gate opens (doorLeafRise). -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_2x1CastleGate</defName>
+    <thingDef>VFEM2_2x1CastleGate</thingDef>
+    <model>Models/vfem2_castle_gate_2x1_frame.obj</model>
+    <doorLeafModel>Models/vfem2_castle_gate_2x1_leaf.obj</doorLeafModel>
+    <doorLeafRise>1.2</doorLeafRise>
+    <builtFor>(2, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_3x1CastleGate</defName>
+    <thingDef>VFEM2_3x1CastleGate</thingDef>
+    <model>Models/vfem2_castle_gate_3x1_frame.obj</model>
+    <doorLeafModel>Models/vfem2_castle_gate_3x1_leaf.obj</doorLeafModel>
+    <doorLeafRise>1.2</doorLeafRise>
+    <builtFor>(3, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_4x1CastleGate</defName>
+    <thingDef>VFEM2_4x1CastleGate</thingDef>
+    <model>Models/vfem2_castle_gate_4x1_frame.obj</model>
+    <doorLeafModel>Models/vfem2_castle_gate_4x1_leaf.obj</doorLeafModel>
+    <doorLeafRise>1.2</doorLeafRise>
+    <builtFor>(4, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+</Defs>

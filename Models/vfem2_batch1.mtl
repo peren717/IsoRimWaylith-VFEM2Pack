@@ -1,0 +1,124 @@
+# vfem2_batch1.mtl - stuff/stuff_dark/stuff_deep = tinted by building material (IsoRim values); glow_ = emissive in IsoRim
+newmtl ash
+Kd 0.160 0.150 0.150
+
+newmtl banner_cloth_tint
+Kd 0.920 0.920 0.900
+
+newmtl barrel_mead
+Kd 0.400 0.270 0.180
+
+newmtl barrel_wine
+Kd 0.550 0.400 0.160
+
+newmtl brew
+Kd 0.420 0.300 0.160
+
+newmtl coal
+Kd 0.260 0.220 0.200
+
+newmtl copper
+Kd 0.660 0.460 0.300
+
+newmtl fur
+Kd 0.600 0.580 0.550
+
+newmtl glass_blue
+Kd 0.480 0.560 0.700
+
+newmtl glass_green
+Kd 0.400 0.620 0.500
+
+newmtl glass_red
+Kd 0.720 0.330 0.320
+
+newmtl glass_tan
+Kd 0.680 0.620 0.520
+
+newmtl glow_ember
+Kd 1.000 0.500 0.150
+
+newmtl glow_indicator
+Kd 0.400 0.900 1.000
+
+newmtl iron
+Kd 0.300 0.310 0.330
+
+newmtl iron_dk
+Kd 0.200 0.200 0.220
+
+newmtl leather
+Kd 0.580 0.310 0.180
+
+newmtl linen
+Kd 0.920 0.920 0.900
+
+newmtl log
+Kd 0.460 0.320 0.160
+
+newmtl machine
+Kd 0.620 0.630 0.640
+
+newmtl machine_dk
+Kd 0.300 0.310 0.330
+
+newmtl oven
+Kd 0.220 0.220 0.230
+
+newmtl pot
+Kd 0.160 0.160 0.170
+
+newmtl pot_in
+Kd 0.070 0.070 0.080
+
+newmtl shelf_wood
+Kd 0.500 0.360 0.220
+
+newmtl shelf_wood_dk
+Kd 0.360 0.260 0.160
+
+newmtl shield
+Kd 0.300 0.300 0.310
+
+newmtl steel_lt
+Kd 0.700 0.720 0.740
+
+newmtl stone
+Kd 0.520 0.500 0.470
+
+newmtl straw
+Kd 0.560 0.580 0.240
+
+newmtl straw_dk
+Kd 0.420 0.440 0.180
+
+newmtl string
+Kd 0.840 0.820 0.740
+
+newmtl stuff
+Kd 1.000 1.000 1.000
+
+newmtl stuff_dark
+Kd 0.800 0.800 0.800
+
+newmtl stuff_deep
+Kd 0.620 0.620 0.620
+
+newmtl target_blue
+Kd 0.200 0.550 0.850
+
+newmtl target_red
+Kd 0.850 0.180 0.150
+
+newmtl target_white
+Kd 0.920 0.920 0.900
+
+newmtl wood
+Kd 0.500 0.330 0.200
+
+newmtl wood_dk
+Kd 0.340 0.220 0.140
+
+newmtl wood_lt
+Kd 0.620 0.450 0.270
+

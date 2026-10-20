@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>IsoRim Waylith - VFE Medieval 2 Pack</name>
+  <author>Peren.</author>
+  <packageId>peren.isorimwaylith.vfem2pack</packageId>
+  <supportedVersions>
+    <li>1.7</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>Peren.IsoRim17</packageId>
+      <displayName>IsoRim Waylith</displayName>
+      <downloadUrl>https://github.com/peren717/IsoRim-1.7</downloadUrl>
+    </li>
+    <li>
+      <packageId>OskarPotocki.VFE.Medieval2</packageId>
+      <displayName>Vanilla Factions Expanded - Medieval 2</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3444347874</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>Peren.IsoRim17</li>
+    <li>OskarPotocki.VFE.Medieval2</li>
+  </loadAfter>
+  <description>3D models for the buildings of Vanilla Factions Expanded - Medieval 2 in IsoRim Waylith's 3D view.
+Beds, hearths, workbenches, barrels, wall turrets, castle doors and castle gates.
+Load after IsoRim Waylith and VFE Medieval 2.
+
+为 IsoRim Waylith 的 3D 视角加入「原版派系扩展 - 中世纪 2」建筑的 3D 模型。
+包括床、壁炉、工作台、酒桶、墙挂炮塔、城堡门和城堡大门。
+请放在 IsoRim Waylith 和中世纪 2 之后加载。</description>
+</ModMetaData>
