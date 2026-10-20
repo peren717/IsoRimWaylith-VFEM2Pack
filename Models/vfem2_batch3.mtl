@@ -1,0 +1,43 @@
+# vfem2_batch3.mtl - stuff/stuff_dark/stuff_deep = tinted by building material (IsoRim values); glow_ = emissive in IsoRim
+newmtl glow_flood
+Kd 0.950 0.970 1.000
+
+newmtl glow_lamp
+Kd 1.000 0.930 0.720
+
+newmtl glow_sun
+Kd 1.000 0.970 0.840
+
+newmtl iron
+Kd 0.300 0.310 0.330
+
+newmtl iron_dk
+Kd 0.200 0.200 0.220
+
+newmtl lamp_base
+Kd 0.580 0.580 0.580
+
+newmtl lamp_dark
+Kd 0.160 0.160 0.170
+
+newmtl lamp_metal
+Kd 0.420 0.430 0.450
+
+newmtl piece_dark
+Kd 0.180 0.180 0.190
+
+newmtl piece_light
+Kd 0.860 0.850 0.800
+
+newmtl steel
+Kd 0.560 0.580 0.610
+
+newmtl stuff
+Kd 1.000 1.000 1.000
+
+newmtl stuff_dark
+Kd 0.800 0.800 0.800
+
+newmtl stuff_deep
+Kd 0.620 0.620 0.620
+

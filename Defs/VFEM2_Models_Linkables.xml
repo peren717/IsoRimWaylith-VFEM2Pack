@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- IsoRim Waylith models for VFE Medieval 2's workbench linkables, batch 2 (Grok, coop delivery 20261019-2247
+       VFEM2_Batch2). Format as Defs\VFEM2_Models.xml. stuff* materials take the building's stuff colour; the anvil and
+       the bellows have no stuff and keep their own colours. Single-sprite ones are not rotatable in the game; the others
+       are built facing north as their _north sprite. -->
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_SmithingAnvil</defName>
+    <thingDef>VFEM2_SmithingAnvil</thingDef>
+    <model>Models/vfem2_smithing_anvil.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_ForgeBellows</defName>
+    <thingDef>VFEM2_ForgeBellows</thingDef>
+    <model>Models/vfem2_forge_bellows.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_TailoringLoom</defName>
+    <thingDef>VFEM2_TailoringLoom</thingDef>
+    <model>Models/vfem2_tailoring_loom.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_MannequinStand</defName>
+    <thingDef>VFEM2_MannequinStand</thingDef>
+    <model>Models/vfem2_mannequin_stand.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_ChiselRack</defName>
+    <thingDef>VFEM2_ChiselRack</thingDef>
+    <model>Models/vfem2_chisel_rack.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_StoneClamp</defName>
+    <thingDef>VFEM2_StoneClamp</thingDef>
+    <model>Models/vfem2_stone_clamp.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_CleaverRack</defName>
+    <thingDef>VFEM2_CleaverRack</thingDef>
+    <model>Models/vfem2_cleaver_rack.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_CarvingBoard</defName>
+    <thingDef>VFEM2_CarvingBoard</thingDef>
+    <model>Models/vfem2_carving_board.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_StonePolisher</defName>
+    <thingDef>VFEM2_StonePolisher</thingDef>
+    <model>Models/vfem2_stone_polisher.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_ArtToolStand</defName>
+    <thingDef>VFEM2_ArtToolStand</thingDef>
+    <model>Models/vfem2_art_tool_stand.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_NotesStack</defName>
+    <thingDef>VFEM2_NotesStack</thingDef>
+    <model>Models/vfem2_notes_stack.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <!-- The chalk face is on the north side: the game's _north sprite shows the board's back. -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_ResearchBoard</defName>
+    <thingDef>VFEM2_ResearchBoard</thingDef>
+    <model>Models/vfem2_research_board.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_SurgicalTools</defName>
+    <thingDef>VFEM2_SurgicalTools</thingDef>
+    <model>Models/vfem2_surgical_tools.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <!-- A shelf (ShelfBase): body in the stuff colour, glass and iron fixed. -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_AilmentsShelf</defName>
+    <thingDef>VFEM2_AilmentsShelf</thingDef>
+    <model>Models/vfem2_ailments_shelf.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+</Defs>

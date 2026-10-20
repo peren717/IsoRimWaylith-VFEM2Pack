@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- IsoRim Waylith models for VFE Medieval 2's Viking style (Ideology, style category VFEM2_Viking), batch 3 (Grok,
+       coop delivery 20261019-2247 VFEM2_Batch3). Each def is for one vanilla thing in one ThingStyleDef only (<style>):
+       IsoRim fits it into that thing's own model entry, so things of other styles keep IsoRim's own models. Each has its
+       own builtFor. Several models: one per Graphic_Random sprite (A, B, C), picked as the game picks the sprite.
+       Lamps are fixed colours with glow_ lenses; everything else takes the stuff colour in its stuff* parts.
+       The Viking ideograms are flat in the game and have no model. Table_1x1c is Vanilla Furniture Expanded's: used
+       only while that mod gives the table a model entry of its own. -->
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_ChessTable</defName>
+    <thingDef>ChessTable</thingDef>
+    <style>VFEM2_Viking_ChessTable</style>
+    <model>Models/vfem2_viking_chess_table.obj</model>
+    <outlineMinSize>0.3</outlineMinSize>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_Column</defName>
+    <thingDef>Column</thingDef>
+    <style>VFEM2_Viking_Column</style>
+    <model>Models/vfem2_viking_column.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <!-- Tables: split-log tops. -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_Table_1x1c</defName>
+    <thingDef>Table_1x1c</thingDef>
+    <style>VFEM2_Viking_Table_1x1c</style>
+    <model>Models/vfem2_viking_table_1x1.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_Table1x2c</defName>
+    <thingDef>Table1x2c</thingDef>
+    <style>VFEM2_Viking_Table1x2c</style>
+    <model>Models/vfem2_viking_table_1x2.obj</model>
+    <builtFor>(1, 2)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_Table2x2c</defName>
+    <thingDef>Table2x2c</thingDef>
+    <style>VFEM2_Viking_Table2x2c</style>
+    <model>Models/vfem2_viking_table_2x2.obj</model>
+    <builtFor>(2, 2)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_Table2x4c</defName>
+    <thingDef>Table2x4c</thingDef>
+    <style>VFEM2_Viking_Table2x4c</style>
+    <model>Models/vfem2_viking_table_2x4.obj</model>
+    <builtFor>(2, 4)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_Table3x3c</defName>
+    <thingDef>Table3x3c</thingDef>
+    <style>VFEM2_Viking_Table3x3c</style>
+    <model>Models/vfem2_viking_table_3x3.obj</model>
+    <builtFor>(3, 3)</builtFor>
+  </IsoRim.ModelDef>
+
+  <!-- Sculptures: three each, as the style's three random sprites. Large C is a rune stone, as its sprite. -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_SculptureSmall</defName>
+    <thingDef>SculptureSmall</thingDef>
+    <style>VFEM2_Viking_SculptureSmall</style>
+    <models>
+      <li>Models/vfem2_viking_sculpture_small_a.obj</li>
+      <li>Models/vfem2_viking_sculpture_small_b.obj</li>
+      <li>Models/vfem2_viking_sculpture_small_c.obj</li>
+    </models>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_SculptureLarge</defName>
+    <thingDef>SculptureLarge</thingDef>
+    <style>VFEM2_Viking_SculptureLarge</style>
+    <models>
+      <li>Models/vfem2_viking_sculpture_large_a.obj</li>
+      <li>Models/vfem2_viking_sculpture_large_b.obj</li>
+      <li>Models/vfem2_viking_sculpture_large_c.obj</li>
+    </models>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_SculptureGrand</defName>
+    <thingDef>SculptureGrand</thingDef>
+    <style>VFEM2_Viking_SculptureGrand</style>
+    <models>
+      <li>Models/vfem2_viking_sculpture_grand_a.obj</li>
+      <li>Models/vfem2_viking_sculpture_grand_b.obj</li>
+      <li>Models/vfem2_viking_sculpture_grand_c.obj</li>
+    </models>
+    <builtFor>(2, 2)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_Shelf</defName>
+    <thingDef>Shelf</thingDef>
+    <style>VFEM2_Viking_Shelf</style>
+    <model>Models/vfem2_viking_shelf.obj</model>
+    <builtFor>(2, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_ShelfSmall</defName>
+    <thingDef>ShelfSmall</thingDef>
+    <style>VFEM2_Viking_ShelfSmall</style>
+    <model>Models/vfem2_viking_shelf_small.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_Stool</defName>
+    <thingDef>Stool</thingDef>
+    <style>VFEM2_Viking_Stool</style>
+    <model>Models/vfem2_viking_stool.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_StandingLamp</defName>
+    <thingDef>StandingLamp</thingDef>
+    <style>VFEM2_Viking_StandingLamp</style>
+    <model>Models/vfem2_viking_standing_lamp.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_SunLamp</defName>
+    <thingDef>SunLamp</thingDef>
+    <style>VFEM2_Viking_SunLamp</style>
+    <model>Models/vfem2_viking_sun_lamp.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_FloodLight</defName>
+    <thingDef>FloodLight</thingDef>
+    <style>VFEM2_Viking_FloodLight</style>
+    <model>Models/vfem2_viking_flood_light.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <!-- Dresser and end table: drawers on the north side (their _north sprites show the back). -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_Dresser</defName>
+    <thingDef>Dresser</thingDef>
+    <style>VFEM2_Viking_Dresser</style>
+    <model>Models/vfem2_viking_dresser.obj</model>
+    <builtFor>(2, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_EndTable</defName>
+    <thingDef>EndTable</thingDef>
+    <style>VFEM2_Viking_EndTable</style>
+    <model>Models/vfem2_viking_end_table.obj</model>
+    <builtFor>(1, 1)</builtFor>
+  </IsoRim.ModelDef>
+
+  <!-- Doors: the frame (wall height) and two leaves, the modelled east one and the same turned half round, sliding apart
+       as IsoRim's plain door leaves. -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_Door</defName>
+    <thingDef>Door</thingDef>
+    <style>VFEM2_Viking_Door</style>
+    <model>Models/vfem2_viking_door_frame.obj</model>
+    <doorLeafModel>Models/vfem2_viking_door_leaf.obj</doorLeafModel>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Viking_Autodoor</defName>
+    <thingDef>Autodoor</thingDef>
+    <style>VFEM2_Viking_Autodoor</style>
+    <model>Models/vfem2_viking_autodoor_frame.obj</model>
+    <doorLeafModel>Models/vfem2_viking_autodoor_leaf.obj</doorLeafModel>
+  </IsoRim.ModelDef>
+
+</Defs>

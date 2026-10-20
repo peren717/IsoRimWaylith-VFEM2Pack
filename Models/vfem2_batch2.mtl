@@ -1,0 +1,76 @@
+# vfem2_batch2.mtl - stuff/stuff_dark/stuff_deep = tinted by building material (IsoRim values); glow_ = emissive in IsoRim
+newmtl bellows_leather
+Kd 0.620 0.560 0.450
+
+newmtl bellows_wood
+Kd 0.360 0.270 0.200
+
+newmtl board_wood
+Kd 0.740 0.600 0.380
+
+newmtl canvas
+Kd 0.800 0.670 0.500
+
+newmtl chalk
+Kd 0.880 0.880 0.860
+
+newmtl chalk_board
+Kd 0.120 0.130 0.130
+
+newmtl cloth_green
+Kd 0.420 0.660 0.360
+
+newmtl cloth_red
+Kd 0.880 0.420 0.360
+
+newmtl glass_pane
+Kd 0.880 0.910 0.940
+
+newmtl handle_brown
+Kd 0.400 0.280 0.200
+
+newmtl handle_olive
+Kd 0.460 0.500 0.260
+
+newmtl ink
+Kd 0.450 0.450 0.450
+
+newmtl iron
+Kd 0.300 0.310 0.330
+
+newmtl iron_dk
+Kd 0.200 0.200 0.220
+
+newmtl paper
+Kd 0.900 0.900 0.860
+
+newmtl pebble
+Kd 0.600 0.600 0.580
+
+newmtl sandstone
+Kd 0.840 0.740 0.580
+
+newmtl steel_lt
+Kd 0.700 0.720 0.740
+
+newmtl stone_block
+Kd 0.740 0.740 0.720
+
+newmtl stuff
+Kd 1.000 1.000 1.000
+
+newmtl stuff_dark
+Kd 0.800 0.800 0.800
+
+newmtl stuff_deep
+Kd 0.620 0.620 0.620
+
+newmtl tool_handle
+Kd 0.860 0.550 0.300
+
+newmtl tray_dk
+Kd 0.340 0.340 0.350
+
+newmtl wood_dk
+Kd 0.340 0.220 0.140
+
