@@ -41,7 +41,7 @@ namespace IsoRimVFEM2Pack
             }
             try
             {
-                if (IsoRim.Api.Version < 5)
+                if (IsoRim.Api.Version < 6)
                 {
                     Log.Warning(Tag + "IsoRim Waylith is older than this pack needs: the boilpot's full look and the banner fix are off.");
                     return;
