@@ -17,6 +17,13 @@
     <defName>R3D_VFEM2_ForgeBellows</defName>
     <thingDef>VFEM2_ForgeBellows</thingDef>
     <model>Models/vfem2_forge_bellows.obj</model>
+    <!-- VFEM2's east sprite is its west one (nozzle to the west): facing east, drawn as facing west. -->
+    <rotationByFacing>
+      <li>0</li>
+      <li>180</li>
+      <li>0</li>
+      <li>0</li>
+    </rotationByFacing>
     <builtFor>(1, 1)</builtFor>
   </IsoRim.ModelDef>
 

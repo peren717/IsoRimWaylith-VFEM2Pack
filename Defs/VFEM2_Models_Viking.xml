@@ -40,6 +40,7 @@
     <thingDef>Table1x2c</thingDef>
     <style>VFEM2_Viking_Table1x2c</style>
     <model>Models/vfem2_viking_table_1x2.obj</model>
+    <surfaceHeight>0.70</surfaceHeight>
     <builtFor>(1, 2)</builtFor>
   </IsoRim.ModelDef>
 
@@ -48,6 +49,7 @@
     <thingDef>Table2x2c</thingDef>
     <style>VFEM2_Viking_Table2x2c</style>
     <model>Models/vfem2_viking_table_2x2.obj</model>
+    <surfaceHeight>0.70</surfaceHeight>
     <builtFor>(2, 2)</builtFor>
   </IsoRim.ModelDef>
 
@@ -56,6 +58,7 @@
     <thingDef>Table2x4c</thingDef>
     <style>VFEM2_Viking_Table2x4c</style>
     <model>Models/vfem2_viking_table_2x4.obj</model>
+    <surfaceHeight>0.70</surfaceHeight>
     <builtFor>(2, 4)</builtFor>
   </IsoRim.ModelDef>
 
@@ -64,6 +67,7 @@
     <thingDef>Table3x3c</thingDef>
     <style>VFEM2_Viking_Table3x3c</style>
     <model>Models/vfem2_viking_table_3x3.obj</model>
+    <surfaceHeight>0.70</surfaceHeight>
     <builtFor>(3, 3)</builtFor>
   </IsoRim.ModelDef>
 
@@ -109,6 +113,7 @@
     <thingDef>Shelf</thingDef>
     <style>VFEM2_Viking_Shelf</style>
     <model>Models/vfem2_viking_shelf.obj</model>
+    <surfaceHeight>0.87</surfaceHeight>   <!-- the top board (the posts rise to 0.98), where stored items rest -->
     <builtFor>(2, 1)</builtFor>
   </IsoRim.ModelDef>
 
@@ -117,6 +122,7 @@
     <thingDef>ShelfSmall</thingDef>
     <style>VFEM2_Viking_ShelfSmall</style>
     <model>Models/vfem2_viking_shelf_small.obj</model>
+    <surfaceHeight>0.67</surfaceHeight>   <!-- the top board (the posts rise to 1.02) -->
     <builtFor>(1, 1)</builtFor>
   </IsoRim.ModelDef>
 
