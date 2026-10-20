@@ -33,6 +33,14 @@ namespace IsoRimVFEM2Pack
         {
             try
             {
+                Warbow.Setup(new Harmony("peren.isorimwaylith.vfem2pack.warbow"));
+            }
+            catch (Exception e)
+            {
+                Log.Error(Tag + "Warbow setup failed: " + e);
+            }
+            try
+            {
                 if (IsoRim.Api.Version < 5)
                 {
                     Log.Warning(Tag + "IsoRim Waylith is older than this pack needs: the boilpot's full look and the banner fix are off.");

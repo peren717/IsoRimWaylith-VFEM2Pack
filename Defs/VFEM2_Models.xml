@@ -155,12 +155,15 @@
   </IsoRim.ModelDef>
 
   <!-- Castle doors (Building_MultiTileDoor): fixed stone frame, two leaves (one modelled, the other the same turned
-       half round) sliding apart into the walls as far as the game slides its own (Doors.DrawWide). -->
+       half round) sliding apart into the walls as far as the game slides its own (Doors.DrawWide). crownTop: the frame's
+       crown tops out at 1.5 wall heights at any wall height; under a floor built over the door it is left out and a
+       flat lintel closes the frame at the wall top. -->
   <IsoRim.ModelDef>
     <defName>R3D_VFEM2_2x1CastleDoor</defName>
     <thingDef>VFEM2_2x1CastleDoor</thingDef>
     <model>Models/vfem2_castle_door_2x1_frame.obj</model>
     <doorLeafModel>Models/vfem2_castle_door_2x1_leaf.obj</doorLeafModel>
+    <crownTop>1.5</crownTop>
     <builtFor>(2, 1)</builtFor>
   </IsoRim.ModelDef>
 
@@ -169,6 +172,7 @@
     <thingDef>VFEM2_3x1CastleDoor</thingDef>
     <model>Models/vfem2_castle_door_3x1_frame.obj</model>
     <doorLeafModel>Models/vfem2_castle_door_3x1_leaf.obj</doorLeafModel>
+    <crownTop>1.5</crownTop>
     <builtFor>(3, 1)</builtFor>
   </IsoRim.ModelDef>
 
@@ -177,6 +181,7 @@
     <thingDef>VFEM2_4x1CastleDoor</thingDef>
     <model>Models/vfem2_castle_door_4x1_frame.obj</model>
     <doorLeafModel>Models/vfem2_castle_door_4x1_leaf.obj</doorLeafModel>
+    <crownTop>1.5</crownTop>
     <builtFor>(4, 1)</builtFor>
   </IsoRim.ModelDef>
 
@@ -186,6 +191,7 @@
     <thingDef>VFEM2_2x1CastleGate</thingDef>
     <model>Models/vfem2_castle_gate_2x1_frame.obj</model>
     <doorLeafModel>Models/vfem2_castle_gate_2x1_leaf.obj</doorLeafModel>
+    <crownTop>1.5</crownTop>
     <doorLeafRise>1.2</doorLeafRise>
     <builtFor>(2, 1)</builtFor>
   </IsoRim.ModelDef>
@@ -195,6 +201,7 @@
     <thingDef>VFEM2_3x1CastleGate</thingDef>
     <model>Models/vfem2_castle_gate_3x1_frame.obj</model>
     <doorLeafModel>Models/vfem2_castle_gate_3x1_leaf.obj</doorLeafModel>
+    <crownTop>1.5</crownTop>
     <doorLeafRise>1.2</doorLeafRise>
     <builtFor>(3, 1)</builtFor>
   </IsoRim.ModelDef>
@@ -204,6 +211,7 @@
     <thingDef>VFEM2_4x1CastleGate</thingDef>
     <model>Models/vfem2_castle_gate_4x1_frame.obj</model>
     <doorLeafModel>Models/vfem2_castle_gate_4x1_leaf.obj</doorLeafModel>
+    <crownTop>1.5</crownTop>
     <doorLeafRise>1.2</doorLeafRise>
     <builtFor>(4, 1)</builtFor>
   </IsoRim.ModelDef>
