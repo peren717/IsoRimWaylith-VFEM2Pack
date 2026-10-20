@@ -120,6 +120,7 @@
     <defName>R3D_VFEM2_AlchemicalWorkbench</defName>
     <thingDef>VFEM2_AlchemicalWorkbench</thingDef>
     <model>Models/vfem2_draught_lab.obj</model>
+    <rotation>180</rotation>   <!-- the model is the sprite mirrored: turned round, the oven is on the sprite's side -->
     <builtFor>(3, 1)</builtFor>
     <surfaceHeight>0.80</surfaceHeight>
   </IsoRim.ModelDef>
@@ -128,6 +129,7 @@
     <defName>R3D_VFEM2_AlchemicalWorkbench_Electric</defName>
     <thingDef>VFEM2_AlchemicalWorkbench_Electric</thingDef>
     <model>Models/vfem2_draught_lab_electric.obj</model>
+    <rotation>180</rotation>   <!-- the model is the sprite mirrored: turned round, the oven is on the sprite's side -->
     <builtFor>(3, 1)</builtFor>
     <surfaceHeight>0.80</surfaceHeight>
   </IsoRim.ModelDef>
