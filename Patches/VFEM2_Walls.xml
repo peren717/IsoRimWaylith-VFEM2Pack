@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- VFE Medieval 2 full-height walls as IsoRim linked models. Added only when IsoRim has Api 10 or later (user
+       2026-10-21): an older IsoRim draws a wall model as a plain model (joint lines, not cut by the cut-away, merlons through
+       floors), so with it these walls keep IsoRim's own wall block. -->
+  <Operation Class="IsoRimVFEM2Pack.PatchOperation_IfIsoRimApi">
+    <minVersion>10</minVersion>
+    <apply Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+        <!-- Full-height walls (castle, damaged castle, timbered, palisade, cloth): linked models, a post filling the cell and an
+             arm (its north half) toward each neighbour it joins. wallFit is the model's wall top (model space): IsoRim stretches
+             it to the walls drawn now and treats it as a wall (cut-away, slabs over it, wall lamps on it, joins). Whatever stands
+             above the wall top is its crown (the castle walls' merlons, the palisade's points): shown under the open sky, left
+             out under a floor built right over it. The models were built for walls of 1.65.
+             The low castle walls stay on IsoRim's own look (low block; the damaged one flat, as VFEM2 makes it standable
+             rubble) until Grok redoes them to match VFEM2's atlas (user 2026-10-20). -->
+        <IsoRim.ModelDef>
+          <defName>R3D_VFEM2_CastleWall</defName>
+          <thingDef>VFEM2_CastleWall</thingDef>
+          <models>
+            <li>Models/vfem2_castle_wall_post.obj</li>
+            <li>Models/vfem2_castle_wall_arm.obj</li>
+          </models>
+          <linked>true</linked>
+          <wallFit>1.43</wallFit>
+        </IsoRim.ModelDef>
+      
+        <IsoRim.ModelDef>
+          <defName>R3D_VFEM2_DamagedCastleWall</defName>
+          <thingDef>VFEM2_DamagedCastleWall</thingDef>
+          <models>
+            <li>Models/vfem2_castle_wall_damaged_post.obj</li>
+            <li>Models/vfem2_castle_wall_damaged_arm.obj</li>
+          </models>
+          <linked>true</linked>
+          <wallFit>1.43</wallFit>
+        </IsoRim.ModelDef>
+      
+        <IsoRim.ModelDef>
+          <defName>R3D_VFEM2_TimberedWall</defName>
+          <thingDef>VFEM2_TimberedWall</thingDef>
+          <models>
+            <li>Models/vfem2_timbered_wall_post.obj</li>
+            <li>Models/vfem2_timbered_wall_arm.obj</li>
+          </models>
+          <linked>true</linked>
+          <wallFit>1.65</wallFit>
+        </IsoRim.ModelDef>
+      
+        <IsoRim.ModelDef>
+          <defName>R3D_VFEM2_Palisade</defName>
+          <thingDef>VFEM2_Palisade</thingDef>
+          <models>
+            <li>Models/vfem2_palisade_post.obj</li>
+            <li>Models/vfem2_palisade_arm.obj</li>
+          </models>
+          <linked>true</linked>
+          <wallFit>1.53</wallFit>
+        </IsoRim.ModelDef>
+      
+        <IsoRim.ModelDef>
+          <defName>R3D_VFEM2_ClothWall</defName>
+          <thingDef>VFEM2_ClothWall</thingDef>
+          <models>
+            <li>Models/vfem2_cloth_wall_post.obj</li>
+            <li>Models/vfem2_cloth_wall_arm.obj</li>
+          </models>
+          <linked>true</linked>
+          <wallFit>1.57</wallFit>
+        </IsoRim.ModelDef>
+      </value>
+    </apply>
+  </Operation>
+</Patch>
