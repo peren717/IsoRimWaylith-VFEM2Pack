@@ -48,8 +48,8 @@ namespace IsoRimVFEM2Pack
                 }
                 if (IsoRim.Api.Version < 9)
                 {
-                    // The apparel models (Patches/VFEM2_Apparel.xml) were left out by PatchOperation_IfIsoRimApi.
-                    Log.Message(Tag + "IsoRim Waylith has no apparel model bindings (Api 9): VFE Medieval 2 hats, torch belt and shields keep IsoRim's own look.");
+                    // The apparel models (Patches/VFEM2_Apparel.xml, VFEM2_Apparel2.xml) were left out by PatchOperation_IfIsoRimApi.
+                    Log.Message(Tag + "IsoRim Waylith has no apparel model bindings (Api 9): VFE Medieval 2 apparel keeps IsoRim's own look.");
                 }
                 Setup();
             }

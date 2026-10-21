@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- IsoRim Waylith models for Vanilla Factions Expanded - Medieval 2 apparel, batch 2 (Grok, coop delivery
+       20261020-2121 VFEM2_Apparel2): 9 body garments, each with a model per body type (male, female, thin, fat, hulk),
+       made on IsoRim's person_<build>_upper / _lower. Added only when IsoRim has Api 9 or later, as batch 1
+       (VFEM2_Apparel.xml, PatchOperation_IfIsoRimApi).
+       IsoRim places a Body binding by the item's layers: Shell (also Middle + Shell, OnSkin + Shell) is the coat, OnSkin
+       (also OnSkin + Middle) the shirt, anything else a shape over the shirt.
+       Colours (vfem2_apparel2.mtl): stuff* faces take the item's colour as the game's sprite does (its stuff or its dye):
+         - armour, padded armour, mantle, dame dress, jester outfit: the whole sprite takes the colour, so all of the model;
+         - king's robes: VFEM2's CutoutComplex mask colours the red robe only; the ermine and the gold panel stay fixed
+           (robe_fur, robe_gold);
+         - tabard: no stuff; the model takes the item's own colour (VFEM2 paints its sprite with the faction's heraldry). -->
+
+  <Operation Class="IsoRimVFEM2Pack.PatchOperation_IfIsoRimApi">
+    <minVersion>9</minVersion>
+    <apply Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+
+        <!-- Armour (Middle + Shell): the coat. A flak vest cannot be worn with them (both Middle on the torso). -->
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_PlateArmorHeavy</defName>
+          <apparel>VFEM2_Apparel_PlateArmorHeavy</apparel>
+          <slot>Body</slot>
+          <model>Models/vfem2_male_plate_armor_heavy.obj</model>
+          <bodyModels>
+            <female>Models/vfem2_female_plate_armor_heavy.obj</female>
+            <thin>Models/vfem2_thin_plate_armor_heavy.obj</thin>
+            <fat>Models/vfem2_fat_plate_armor_heavy.obj</fat>
+            <hulk>Models/vfem2_hulk_plate_armor_heavy.obj</hulk>
+          </bodyModels>
+        </IsoRim.ApparelModelDef>
+
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_HeavyLeatherArmor</defName>
+          <apparel>VFEM2_Apparel_HeavyLeatherArmor</apparel>
+          <slot>Body</slot>
+          <model>Models/vfem2_male_heavy_leather_armor.obj</model>
+          <bodyModels>
+            <female>Models/vfem2_female_heavy_leather_armor.obj</female>
+            <thin>Models/vfem2_thin_heavy_leather_armor.obj</thin>
+            <fat>Models/vfem2_fat_heavy_leather_armor.obj</fat>
+            <hulk>Models/vfem2_hulk_heavy_leather_armor.obj</hulk>
+          </bodyModels>
+        </IsoRim.ApparelModelDef>
+
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_LeatherArmor</defName>
+          <apparel>VFEM2_Apparel_LeatherArmor</apparel>
+          <slot>Body</slot>
+          <model>Models/vfem2_male_leather_armor.obj</model>
+          <bodyModels>
+            <female>Models/vfem2_female_leather_armor.obj</female>
+            <thin>Models/vfem2_thin_leather_armor.obj</thin>
+            <fat>Models/vfem2_fat_leather_armor.obj</fat>
+            <hulk>Models/vfem2_hulk_leather_armor.obj</hulk>
+          </bodyModels>
+        </IsoRim.ApparelModelDef>
+
+        <!-- Padded armour (OnSkin + Middle): the shirt. -->
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_PaddedArmor</defName>
+          <apparel>VFEM2_Apparel_PaddedArmor</apparel>
+          <slot>Body</slot>
+          <model>Models/vfem2_male_padded_armor.obj</model>
+          <bodyModels>
+            <female>Models/vfem2_female_padded_armor.obj</female>
+            <thin>Models/vfem2_thin_padded_armor.obj</thin>
+            <fat>Models/vfem2_fat_padded_armor.obj</fat>
+            <hulk>Models/vfem2_hulk_padded_armor.obj</hulk>
+          </bodyModels>
+        </IsoRim.ApparelModelDef>
+
+        <!-- Tabard and mantle (VE Framework's outer shell layer): a shape over the shirt. -->
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_Tabard</defName>
+          <apparel>VFEM2_Apparel_Tabard</apparel>
+          <slot>Body</slot>
+          <model>Models/vfem2_male_tabard.obj</model>
+          <bodyModels>
+            <female>Models/vfem2_female_tabard.obj</female>
+            <thin>Models/vfem2_thin_tabard.obj</thin>
+            <fat>Models/vfem2_fat_tabard.obj</fat>
+            <hulk>Models/vfem2_hulk_tabard.obj</hulk>
+          </bodyModels>
+        </IsoRim.ApparelModelDef>
+
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_Mantle</defName>
+          <apparel>VFEM2_Apparel_Mantle</apparel>
+          <slot>Body</slot>
+          <model>Models/vfem2_male_mantle.obj</model>
+          <bodyModels>
+            <female>Models/vfem2_female_mantle.obj</female>
+            <thin>Models/vfem2_thin_mantle.obj</thin>
+            <fat>Models/vfem2_fat_mantle.obj</fat>
+            <hulk>Models/vfem2_hulk_mantle.obj</hulk>
+          </bodyModels>
+        </IsoRim.ApparelModelDef>
+
+        <!-- Robes and dress (Shell; the dress OnSkin + Shell): the coat. A flak vest under them is hidden, as on the
+             game's sprite (the robe's gold panel and the dress cover it). -->
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_KingsRobes</defName>
+          <apparel>VFEM2_Apparel_KingsRobes</apparel>
+          <slot>Body</slot>
+          <model>Models/vfem2_male_kings_robes.obj</model>
+          <bodyModels>
+            <female>Models/vfem2_female_kings_robes.obj</female>
+            <thin>Models/vfem2_thin_kings_robes.obj</thin>
+            <fat>Models/vfem2_fat_kings_robes.obj</fat>
+            <hulk>Models/vfem2_hulk_kings_robes.obj</hulk>
+          </bodyModels>
+        </IsoRim.ApparelModelDef>
+
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_DameDress</defName>
+          <apparel>VFEM2_Apparel_DameDress</apparel>
+          <slot>Body</slot>
+          <model>Models/vfem2_male_dame_dress.obj</model>
+          <bodyModels>
+            <female>Models/vfem2_female_dame_dress.obj</female>
+            <thin>Models/vfem2_thin_dame_dress.obj</thin>
+            <fat>Models/vfem2_fat_dame_dress.obj</fat>
+            <hulk>Models/vfem2_hulk_dame_dress.obj</hulk>
+          </bodyModels>
+        </IsoRim.ApparelModelDef>
+
+        <!-- Jester outfit (OnSkin): the shirt. -->
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_JesterOutfit</defName>
+          <apparel>VFEM2_Apparel_JesterOutfit</apparel>
+          <slot>Body</slot>
+          <model>Models/vfem2_male_jester_outfit.obj</model>
+          <bodyModels>
+            <female>Models/vfem2_female_jester_outfit.obj</female>
+            <thin>Models/vfem2_thin_jester_outfit.obj</thin>
+            <fat>Models/vfem2_fat_jester_outfit.obj</fat>
+            <hulk>Models/vfem2_hulk_jester_outfit.obj</hulk>
+          </bodyModels>
+        </IsoRim.ApparelModelDef>
+
+      </value>
+    </apply>
+  </Operation>
+
+</Patch>

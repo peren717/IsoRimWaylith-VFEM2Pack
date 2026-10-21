@@ -1,0 +1,19 @@
+# vfem2_apparel2.mtl - self-contained. stuff_plain* = IsoRim apparel tint materials (same values as isorim.mtl); robe_* = fixed colours (KingsRobes mask black: ermine fur, gold panel)
+newmtl robe_fur
+Kd 0.940 0.930 0.900
+
+newmtl robe_gold
+Kd 0.800 0.640 0.240
+
+newmtl stuff_plain
+Kd 1.000 1.000 1.000
+
+newmtl stuff_plain_dark
+Kd 0.800 0.800 0.800
+
+newmtl stuff_plain_deep
+Kd 0.600 0.600 0.600
+
+newmtl stuff_plain_light
+Kd 1.120 1.120 1.120
+
