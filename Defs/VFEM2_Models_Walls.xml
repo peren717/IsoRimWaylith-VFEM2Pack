@@ -4,32 +4,11 @@
   <!-- IsoRim Waylith models for VFE Medieval 2's walls, grape plant and draughts (Grok, coop delivery
        20261020-2241 VFEM2_Walls_Plants_Draughts). Format as Defs\VFEM2_Models.xml. -->
 
-  <!-- Low castle walls (intact and damaged): linked as IsoRim's fence, the post filling the cell and an arm toward each
-       neighbour it joins (built pointing north). Built for walls 1.65 tall; wallFit keeps them in step with the walls drawn
-       now. The full-height walls (castle, damaged castle, timbered, palisade, cloth) keep IsoRim's wall block for now: a
-       wall drawn from a model is not cut down by the cut-away (the low walls never are). -->
-
-  <IsoRim.ModelDef>
-    <defName>R3D_VFEM2_LowCastleWall</defName>
-    <thingDef>VFEM2_LowCastleWall</thingDef>
-    <models>
-      <li>Models/vfem2_low_castle_wall_post.obj</li>
-      <li>Models/vfem2_low_castle_wall_arm.obj</li>
-    </models>
-    <linked>true</linked>
-    <wallFit>1.65</wallFit>
-  </IsoRim.ModelDef>
-
-  <IsoRim.ModelDef>
-    <defName>R3D_VFEM2_DamagedLowCastleWall</defName>
-    <thingDef>VFEM2_DamagedLowCastleWall</thingDef>
-    <models>
-      <li>Models/vfem2_low_castle_wall_damaged_post.obj</li>
-      <li>Models/vfem2_low_castle_wall_damaged_arm.obj</li>
-    </models>
-    <linked>true</linked>
-    <wallFit>1.65</wallFit>
-  </IsoRim.ModelDef>
+  <!-- Walls: none bound for now. The low castle walls go back to IsoRim's own look (low block; the damaged one flat, as
+       VFEM2 makes it standable rubble) until Grok redoes them to match VFEM2's atlas (user 2026-10-20): the intact one with a
+       raised top that runs on through its joins, the damaged one as low rubble on the ground. The full-height walls
+       (castle, damaged castle, timbered, palisade, cloth) keep IsoRim's wall block: a wall drawn from a model is not cut
+       down by the cut-away yet. -->
 
   <!-- Grape plant: two variants as the game's Graphic_Random, scaled by growth; leaf* parts drop while leafless. -->
   <IsoRim.ModelDef>
