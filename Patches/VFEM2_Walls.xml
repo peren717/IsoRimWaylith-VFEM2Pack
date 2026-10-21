@@ -8,7 +8,7 @@
     <apply Class="PatchOperationAdd">
       <xpath>/Defs</xpath>
       <value>
-        <!-- Full-height walls (castle, damaged castle, timbered, palisade, cloth): linked models, a post filling the cell and an
+        <!-- Full-height walls (castle, timbered, palisade, cloth; the damaged castle wall, a half-height cover in VFEM2, keeps IsoRim's half block until Grok redoes it at that height, user 2026-10-21): linked models, a post filling the cell and an
              arm (its north half) toward each neighbour it joins. wallFit is the model's wall top (model space): IsoRim stretches
              it to the walls drawn now and treats it as a wall (cut-away, slabs over it, wall lamps on it, joins). Whatever stands
              above the wall top is its crown (the castle walls' merlons, the palisade's points): shown under the open sky, left
@@ -21,17 +21,6 @@
           <models>
             <li>Models/vfem2_castle_wall_post.obj</li>
             <li>Models/vfem2_castle_wall_arm.obj</li>
-          </models>
-          <linked>true</linked>
-          <wallFit>1.43</wallFit>
-        </IsoRim.ModelDef>
-      
-        <IsoRim.ModelDef>
-          <defName>R3D_VFEM2_DamagedCastleWall</defName>
-          <thingDef>VFEM2_DamagedCastleWall</thingDef>
-          <models>
-            <li>Models/vfem2_castle_wall_damaged_post.obj</li>
-            <li>Models/vfem2_castle_wall_damaged_arm.obj</li>
           </models>
           <linked>true</linked>
           <wallFit>1.43</wallFit>
