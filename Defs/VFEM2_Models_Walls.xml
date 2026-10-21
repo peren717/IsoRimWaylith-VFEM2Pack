@@ -4,6 +4,55 @@
   <!-- IsoRim Waylith models for VFE Medieval 2's walls, grape plant and draughts (Grok, coop delivery
        20261020-2241 VFEM2_Walls_Plants_Draughts). Format as Defs\VFEM2_Models.xml. -->
 
+  <!-- Walls: used only with IsoRim Api 10 or later. These entries name no thing (IsoRim skips them); Patches\VFEM2_Walls.xml
+       gives each its thingDef when IsoRim has Api 10 (an older IsoRim keeps its own wall blocks).
+       All are linked models: a post filling the cell and an arm toward each neighbour it joins (built pointing north).
+       wallFit: the walls the model was built for; IsoRim stretches its height to the walls drawn now and, as the game draws
+       these as walls, treats it as a wall (cut-away, slabs over it, fixtures on it, joins); what stands above wallFit is its
+       crown (merlons, the palisade's points), left out under a floor built right over it. -->
+
+  <!-- Full-height walls (Grok, 20261020-2241): wallFit is the model's wall top, so it meets the walls drawn now. The damaged
+       castle wall (a half-height cover in VFEM2) and the low castle walls keep IsoRim's own look until Grok redoes them. -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_CastleWall</defName>
+    <models>
+      <li>Models/vfem2_castle_wall_post.obj</li>
+      <li>Models/vfem2_castle_wall_arm.obj</li>
+    </models>
+    <linked>true</linked>
+    <wallFit>1.43</wallFit>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_TimberedWall</defName>
+    <models>
+      <li>Models/vfem2_timbered_wall_post.obj</li>
+      <li>Models/vfem2_timbered_wall_arm.obj</li>
+    </models>
+    <linked>true</linked>
+    <wallFit>1.65</wallFit>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Palisade</defName>
+    <models>
+      <li>Models/vfem2_palisade_post.obj</li>
+      <li>Models/vfem2_palisade_arm.obj</li>
+    </models>
+    <linked>true</linked>
+    <wallFit>1.53</wallFit>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_ClothWall</defName>
+    <models>
+      <li>Models/vfem2_cloth_wall_post.obj</li>
+      <li>Models/vfem2_cloth_wall_arm.obj</li>
+    </models>
+    <linked>true</linked>
+    <wallFit>1.57</wallFit>
+  </IsoRim.ModelDef>
+
   <!-- Grape plant: two variants as the game's Graphic_Random, scaled by growth; leaf* parts drop while leafless. -->
   <IsoRim.ModelDef>
     <defName>R3D_VFEM2_Plant_Grape</defName>
