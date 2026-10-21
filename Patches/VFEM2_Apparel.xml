@@ -10,8 +10,8 @@
        Colours (vfem2_apparel1.mtl): stuff* faces take the item's colour as the game's sprite does (its stuff, or the
        colour VFEM2 gives it); the rest keep their own colour:
          - hats: the stuff colour (or dye); the crown's gold band, points and balls stay gold, its cap takes the stuff;
-         - plague mask, torch belt: no stuff and no colour in VFEM2: all fixed colours. The torch heads (flame_torch)
-           burn with IsoRim's live flame;
+         - plague mask, torch belt: no stuff and no colour in VFEM2: all fixed colours. The torch heads (torch_head)
+           are unlit, as on VFEM2's sprite (user 2026-10-20);
          - shields: VFEM2 colours them like clothing (CompColorable, ColorGenerator_StandardApparel, faction colours for
            its soldiers) through a CutoutComplex mask whose red part is the face: so the face (stuff_plain) and the
            heater's cross (stuff_plain_dark, a shade darker) take the shield's colour; rim, boss, back and straps fixed.

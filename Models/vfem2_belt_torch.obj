@@ -270,7 +270,7 @@ f 54 4 7
 f 54 7 56
 f 55 6 1
 f 55 1 53
-usemtl flame_torch
+usemtl torch_head
 f 71 72 73
 f 71 73 74
 f 72 75 76

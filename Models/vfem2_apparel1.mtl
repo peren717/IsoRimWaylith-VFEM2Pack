@@ -8,8 +8,8 @@ Kd 0.860 0.680 0.260
 newmtl crown_gold_dark
 Kd 0.660 0.500 0.180
 
-newmtl flame_torch
-Kd 0.800 0.600 0.280
+newmtl torch_head
+Kd 0.230 0.180 0.130
 
 newmtl plague_lens
 Kd 0.220 0.220 0.240
