@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- IsoRim Waylith models for Vanilla Factions Expanded - Medieval 2 apparel, batch 1 (Grok, coop delivery
+       20261020-0108 VFEM2_Apparel1): 10 hats, the torch belt and the two shields.
+       IsoRim.ApparelModelDef is IsoRim's apparel model binding (Api 9; see IsoRim's Docs/Api.md). It is a def type an
+       older IsoRim does not know, so the defs are added by the pack's own patch operation only when IsoRim has Api 9 or
+       later (IsoRimVFEM2Pack.PatchOperation_IfIsoRimApi, Source/ApparelGate.cs); with an older IsoRim they are left out
+       and these items keep IsoRim's own look.
+       Colours (vfem2_apparel1.mtl): stuff* faces take the item's colour as the game's sprite does (its stuff, or the
+       colour VFEM2 gives it); the rest keep their own colour:
+         - hats: the stuff colour (or dye); the crown's gold band, points and balls stay gold, its cap takes the stuff;
+         - plague mask, torch belt: no stuff and no colour in VFEM2: all fixed colours. The torch heads (flame_torch)
+           burn with IsoRim's live flame;
+         - shields: VFEM2 colours them like clothing (CompColorable, ColorGenerator_StandardApparel, faction colours for
+           its soldiers) through a CutoutComplex mask whose red part is the face: so the face (stuff_plain) and the
+           heater's cross (stuff_plain_dark, a shade darker) take the shield's colour; rim, boss, back and straps fixed.
+       Shields are held on the left forearm while VFEM2 shows them (drafted, aiming; not with a two-handed weapon). -->
+
+  <Operation Class="IsoRimVFEM2Pack.PatchOperation_IfIsoRimApi">
+    <minVersion>9</minVersion>
+    <apply Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+
+        <!-- Headgear: made on IsoRim's person_head.obj (same origin), drawn on the head like IsoRim's own hats. What
+             shows under them (hair, beard, eyes) follows the game's own rules for each item (FullHead / UpperHead). -->
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_PlateHelmetHeavy</defName>
+          <apparel>VFEM2_Apparel_PlateHelmetHeavy</apparel>
+          <slot>Head</slot>
+          <model>Models/vfem2_hat_plate_helmet_heavy.obj</model>
+        </IsoRim.ApparelModelDef>
+
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_HeavyLeatherHelmet</defName>
+          <apparel>VFEM2_Apparel_HeavyLeatherHelmet</apparel>
+          <slot>Head</slot>
+          <model>Models/vfem2_hat_heavy_leather_helmet.obj</model>
+        </IsoRim.ApparelModelDef>
+
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_LeatherHelmet</defName>
+          <apparel>VFEM2_Apparel_LeatherHelmet</apparel>
+          <slot>Head</slot>
+          <model>Models/vfem2_hat_leather_helmet.obj</model>
+        </IsoRim.ApparelModelDef>
+
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_PaddedHelmet</defName>
+          <apparel>VFEM2_Apparel_PaddedHelmet</apparel>
+          <slot>Head</slot>
+          <model>Models/vfem2_hat_padded_helmet.obj</model>
+        </IsoRim.ApparelModelDef>
+
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_KingsCrown</defName>
+          <apparel>VFEM2_Apparel_KingsCrown</apparel>
+          <slot>Head</slot>
+          <model>Models/vfem2_hat_kings_crown.obj</model>
+        </IsoRim.ApparelModelDef>
+
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_DameHat</defName>
+          <apparel>VFEM2_Apparel_DameHat</apparel>
+          <slot>Head</slot>
+          <model>Models/vfem2_hat_dame_hat.obj</model>
+        </IsoRim.ApparelModelDef>
+
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_JesterHat</defName>
+          <apparel>VFEM2_Apparel_JesterHat</apparel>
+          <slot>Head</slot>
+          <model>Models/vfem2_hat_jester_hat.obj</model>
+        </IsoRim.ApparelModelDef>
+
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_PlagueMask</defName>
+          <apparel>VFEM2_Apparel_PlagueMask</apparel>
+          <slot>Head</slot>
+          <model>Models/vfem2_hat_plague_mask.obj</model>
+        </IsoRim.ApparelModelDef>
+
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_Chaperon</defName>
+          <apparel>VFEM2_Apparel_Chaperon</apparel>
+          <slot>Head</slot>
+          <model>Models/vfem2_hat_chaperon.obj</model>
+        </IsoRim.ApparelModelDef>
+
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_Cap</defName>
+          <apparel>VFEM2_Apparel_Cap</apparel>
+          <slot>Head</slot>
+          <model>Models/vfem2_hat_cap.obj</model>
+        </IsoRim.ApparelModelDef>
+
+        <!-- Torch belt: made in IsoRim's person_belt frame (band at y 0.27-0.34), the torches on the left front hip;
+             stretched round the outermost waist like IsoRim's belts. -->
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_TorchBelt</defName>
+          <apparel>VFEM2_Apparel_TorchBelt</apparel>
+          <slot>Belt</slot>
+          <model>Models/vfem2_belt_torch.obj</model>
+          <mount>belt</mount>
+        </IsoRim.ApparelModelDef>
+
+        <!-- Shields: grip at the origin, face toward -z of the file; IsoRim holds them on the left forearm. -->
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_Shield_Heater</defName>
+          <apparel>VFEM2_Shield_Heater</apparel>
+          <slot>Shield</slot>
+          <model>Models/vfem2_shield_heater.obj</model>
+        </IsoRim.ApparelModelDef>
+
+        <IsoRim.ApparelModelDef>
+          <defName>R3DApparel_VFEM2_Shield_Round</defName>
+          <apparel>VFEM2_Shield_Round</apparel>
+          <slot>Shield</slot>
+          <model>Models/vfem2_shield_round.obj</model>
+        </IsoRim.ApparelModelDef>
+
+      </value>
+    </apply>
+  </Operation>
+
+</Patch>

@@ -1,0 +1,55 @@
+# vfem2_apparel1.mtl - self-contained. stuff_plain* = IsoRim apparel tint materials (same values as isorim.mtl); stuff_mask_dark copied from IsoRim masks.mtl (tinted, near-black); flame_ = IsoRim replaces with fire; all others fixed colours
+newmtl belt_leather
+Kd 0.360 0.260 0.180
+
+newmtl crown_gold
+Kd 0.860 0.680 0.260
+
+newmtl crown_gold_dark
+Kd 0.660 0.500 0.180
+
+newmtl flame_torch
+Kd 0.800 0.600 0.280
+
+newmtl plague_lens
+Kd 0.220 0.220 0.240
+
+newmtl plague_strap
+Kd 0.400 0.360 0.320
+
+newmtl plague_white
+Kd 0.900 0.890 0.860
+
+newmtl shield_back
+Kd 0.300 0.300 0.310
+
+newmtl shield_boss
+Kd 0.360 0.370 0.390
+
+newmtl shield_rim
+Kd 0.420 0.430 0.450
+
+newmtl shield_strap
+Kd 0.450 0.280 0.180
+
+newmtl stuff_mask_dark
+Kd 0.200 0.200 0.200
+
+newmtl stuff_plain
+Kd 1.000 1.000 1.000
+
+newmtl stuff_plain_dark
+Kd 0.800 0.800 0.800
+
+newmtl stuff_plain_deep
+Kd 0.600 0.600 0.600
+
+newmtl stuff_plain_light
+Kd 1.120 1.120 1.120
+
+newmtl torch_strap
+Kd 0.720 0.660 0.540
+
+newmtl torch_wood
+Kd 0.420 0.300 0.160
+

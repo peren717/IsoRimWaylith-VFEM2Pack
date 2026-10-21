@@ -46,6 +46,11 @@ namespace IsoRimVFEM2Pack
                     Log.Warning(Tag + "IsoRim Waylith is older than this pack needs: the boilpot's full look and the banner fix are off.");
                     return;
                 }
+                if (IsoRim.Api.Version < 9)
+                {
+                    // The apparel models (Patches/VFEM2_Apparel.xml) were left out by PatchOperation_IfIsoRimApi.
+                    Log.Message(Tag + "IsoRim Waylith has no apparel model bindings (Api 9): VFE Medieval 2 hats, torch belt and shields keep IsoRim's own look.");
+                }
                 Setup();
             }
             catch (Exception e)
