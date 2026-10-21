@@ -57,6 +57,18 @@ namespace IsoRimVFEM2Pack
             {
                 Log.Error(Tag + "Setup failed: " + e);
             }
+            try
+            {
+                // Faction heraldry on the 3D tabard: needs IsoRim's apparel decals (Api 10); older: the tabard's plain look.
+                if (IsoRim.Api.Version >= 10)
+                {
+                    Heraldry.Setup();
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(Tag + "Heraldry setup failed: " + e);
+            }
         }
 
         private static void Setup()
