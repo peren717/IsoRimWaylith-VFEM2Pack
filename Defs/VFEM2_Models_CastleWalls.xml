@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- The castle wall family (castle wall, damaged castle wall, low castle wall, damaged low castle wall) on IsoRim's own
+       wall path with shaped tops (IsoRim Api 11 "wall tops", Docs/Api.md part 5): no model files, the walls are IsoRim's
+       blocks with the VFEM2 atlases' own bricks on their sides, merlons / a ridge / broken stubs on top, and the damaged
+       low wall lies on the ground as rubble. Used only with IsoRim Api 11 or later.
+       These entries name no thing and carry no wall top (IsoRim skips an entry that names no thing, and an older IsoRim
+       does not know the wallTop field); Patches\VFEM2_CastleWalls.xml gives each its thingDef and wallTop when IsoRim has
+       Api 11. The wall turrets' entries (Defs\VFEM2_Models.xml) get their low-wall base there too. -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_CastleWall</defName>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_DamagedCastleWall</defName>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_LowCastleWall</defName>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_DamagedLowCastleWall</defName>
+  </IsoRim.ModelDef>
+
+</Defs>

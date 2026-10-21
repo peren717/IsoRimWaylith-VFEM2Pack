@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- VFE Medieval 2's castle wall family on IsoRim's wall path with shaped tops (IsoRim Api 11 "wall tops", user-approved
+       redo 2026-10-21, design: model-review\castlewalls\APPROACH.md). Only when IsoRim has Api 11 or later: an older IsoRim
+       does not know the wallTop field, so there these walls keep IsoRim's plain blocks and the wall turrets their old base.
+       The entries live in Defs\VFEM2_Models_CastleWalls.xml (and Defs\VFEM2_Models.xml for the turrets); this patch only
+       adds fields to them, never a whole entry (a def added by a patch has no mod of its own).
+
+       Numbers are for walls 1.65 high (wallHeight) and follow the wall height set in IsoRim.
+       Side textures are cut at run time from VFEM2's own atlases (nothing of VFEM2's art is shipped here): one brick wide
+       (40 px = 0.5 cell) and two courses up. Castle wall: the atlas' two brick rows plus a mortar course under each; low and
+       damaged walls: their one brick row plus the castle atlas' mortar, the second course moved half a brick. Bricks x 0.87
+       to sit with IsoRim's own walls (user). -->
+  <Operation Class="IsoRimVFEM2Pack.PatchOperation_IfIsoRimApi">
+    <minVersion>11</minVersion>
+    <apply Class="PatchOperationSequence">
+      <operations>
+
+        <!-- Castle wall: a full wall (cut by the cut-away, slabs over it) with a row of merlons along every open side, one
+             every half cell on the map grid, a square one in each corner; left out under a floor over it. -->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/IsoRim.ModelDef[defName="R3D_VFEM2_CastleWall"]</xpath>
+          <value>
+            <thingDef>VFEM2_CastleWall</thingDef>
+            <wallTop>
+              <height>1.65</height>
+              <rule>Merlons</rule>
+              <rise>0.22</rise>
+              <band>0.1875</band>
+              <period>0.5</period>
+              <length>0.25</length>
+              <texture>Things/Building/Linked/CastleWall/CastleWall_Atlas</texture>
+              <strips>
+                <li><x>337</x><y>252</y><width>40</width><height>18</height></li>
+                <li><x>337</x><y>270</y><width>40</width><height>6</height></li>
+                <li><x>337</x><y>276</y><width>40</width><height>17</height></li>
+                <li><x>337</x><y>270</y><width>40</width><height>6</height></li>
+              </strips>
+              <tile>(0.5, 0.55)</tile>
+              <brightness>0.87</brightness>
+              <topShade>0.92</topShade>
+            </wallTop>
+          </value>
+        </li>
+
+        <!-- Damaged castle wall: half-height cover (VFEM2 fill 0.55), broken stubs along its open sides. -->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/IsoRim.ModelDef[defName="R3D_VFEM2_DamagedCastleWall"]</xpath>
+          <value>
+            <thingDef>VFEM2_DamagedCastleWall</thingDef>
+            <wallTop>
+              <height>0.72</height>
+              <rule>Ragged</rule>
+              <band>0.25</band>
+              <segment>0.25</segment>
+              <steps>
+                <li>0</li>
+                <li>0.05</li>
+                <li>0.10</li>
+                <li>0.14</li>
+              </steps>
+              <texture>Things/Building/Linked/CastleWallDamaged/CastleWallDamaged_Atlas</texture>
+              <strips>
+                <li><x>357</x><y>275</y><width>40</width><height>19</height></li>
+                <li><texture>Things/Building/Linked/CastleWall/CastleWall_Atlas</texture><x>337</x><y>270</y><width>40</width><height>6</height></li>
+                <li><x>357</x><y>275</y><width>40</width><height>19</height><shift>20</shift></li>
+                <li><texture>Things/Building/Linked/CastleWall/CastleWall_Atlas</texture><x>337</x><y>270</y><width>40</width><height>6</height><shift>20</shift></li>
+              </strips>
+              <tile>(0.5, 0.56)</tile>
+              <brightness>0.87</brightness>
+              <topShade>0.88</topShade>
+            </wallTop>
+          </value>
+        </li>
+
+        <!-- Low castle wall: chest-high cover (VFEM2 fill 0.6), no merlons: a continuous ridge down the middle, as VFEM2's
+             atlas. Body 0.56, ridge to 0.64. -->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/IsoRim.ModelDef[defName="R3D_VFEM2_LowCastleWall"]</xpath>
+          <value>
+            <thingDef>VFEM2_LowCastleWall</thingDef>
+            <wallTop>
+              <height>0.56</height>
+              <rule>Ridge</rule>
+              <rise>0.08</rise>
+              <band>0.25</band>
+              <texture>Things/Building/Linked/LowCastleWall/LowCastleWall_Atlas</texture>
+              <strips>
+                <li><x>357</x><y>274</y><width>40</width><height>19</height></li>
+                <li><texture>Things/Building/Linked/CastleWall/CastleWall_Atlas</texture><x>337</x><y>270</y><width>40</width><height>6</height></li>
+                <li><x>357</x><y>274</y><width>40</width><height>19</height><shift>20</shift></li>
+                <li><texture>Things/Building/Linked/CastleWall/CastleWall_Atlas</texture><x>337</x><y>270</y><width>40</width><height>6</height><shift>20</shift></li>
+              </strips>
+              <tile>(0.5, 0.56)</tile>
+              <brightness>0.87</brightness>
+              <topShade>0.92</topShade>
+            </wallTop>
+          </value>
+        </li>
+
+        <!-- Damaged low castle wall: standable rubble (VFEM2 fill 0), lying on the ground, joined to the walls round it. -->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/IsoRim.ModelDef[defName="R3D_VFEM2_DamagedLowCastleWall"]</xpath>
+          <value>
+            <thingDef>VFEM2_DamagedLowCastleWall</thingDef>
+            <wallTop>
+              <rule>Rubble</rule>
+              <bed>0.035</bed>
+              <inset>0.0625</inset>
+              <segment>0.25</segment>
+              <chance>0.35</chance>
+              <steps>
+                <li>0.07</li>
+                <li>0.12</li>
+              </steps>
+              <topShade>0.80</topShade>
+              <partShade>0.98</partShade>
+              <sideShade>0.70</sideShade>
+            </wallTop>
+          </value>
+        </li>
+
+        <!-- Wall turrets: the base is a cell of low castle wall (the same ridge, joined with the walls beside it); the gun
+             turns on top of the ridge at 0.65 (at walls 1.65; wallFit 1.65 so it is not stretched there), clear of the
+             ridge and of the low walls beside it all the way round (gun_clearance.json). -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/IsoRim.ModelDef[defName="R3D_VFEM2_Turret_WallMountedArbalest" or defName="R3D_VFEM2_Turret_WallMountedArquebus"]/topHeight</xpath>
+          <value><topHeight>0.65</topHeight></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/IsoRim.ModelDef[defName="R3D_VFEM2_Turret_WallMountedArbalest" or defName="R3D_VFEM2_Turret_WallMountedArquebus"]/wallFit</xpath>
+          <value><wallFit>1.65</wallFit></value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/IsoRim.ModelDef[defName="R3D_VFEM2_Turret_WallMountedArbalest" or defName="R3D_VFEM2_Turret_WallMountedArquebus"]</xpath>
+          <value>
+            <wallTop>
+              <height>0.56</height>
+              <rule>Ridge</rule>
+              <rise>0.08</rise>
+              <band>0.25</band>
+              <texture>Things/Building/Linked/LowCastleWall/LowCastleWall_Atlas</texture>
+              <strips>
+                <li><x>357</x><y>274</y><width>40</width><height>19</height></li>
+                <li><texture>Things/Building/Linked/CastleWall/CastleWall_Atlas</texture><x>337</x><y>270</y><width>40</width><height>6</height></li>
+                <li><x>357</x><y>274</y><width>40</width><height>19</height><shift>20</shift></li>
+                <li><texture>Things/Building/Linked/CastleWall/CastleWall_Atlas</texture><x>337</x><y>270</y><width>40</width><height>6</height><shift>20</shift></li>
+              </strips>
+              <tile>(0.5, 0.56)</tile>
+              <brightness>0.87</brightness>
+              <topShade>0.92</topShade>
+            </wallTop>
+          </value>
+        </li>
+
+      </operations>
+    </apply>
+  </Operation>
+</Patch>
