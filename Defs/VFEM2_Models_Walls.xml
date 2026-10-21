@@ -11,18 +11,8 @@
        these as walls, treats it as a wall (cut-away, slabs over it, fixtures on it, joins); what stands above wallFit is its
        crown (merlons, the palisade's points), left out under a floor built right over it. -->
 
-  <!-- Full-height walls (Grok, 20261020-2241): wallFit is the model's wall top, so it meets the walls drawn now. The damaged
+  <!-- Full-height walls (Grok, 20261020-2241; the castle wall family is being redone, user 2026-10-21, and keeps IsoRim's blocks until then): wallFit is the model's wall top, so it meets the walls drawn now. The damaged
        castle wall (a half-height cover in VFEM2) and the low castle walls keep IsoRim's own look until Grok redoes them. -->
-  <IsoRim.ModelDef>
-    <defName>R3D_VFEM2_CastleWall</defName>
-    <models>
-      <li>Models/vfem2_castle_wall_post.obj</li>
-      <li>Models/vfem2_castle_wall_arm.obj</li>
-    </models>
-    <linked>true</linked>
-    <wallFit>1.43</wallFit>
-  </IsoRim.ModelDef>
-
   <IsoRim.ModelDef>
     <defName>R3D_VFEM2_TimberedWall</defName>
     <models>

@@ -12,10 +12,6 @@
     <apply Class="PatchOperationSequence">
       <operations>
         <li Class="PatchOperationAdd">
-          <xpath>/Defs/IsoRim.ModelDef[defName="R3D_VFEM2_CastleWall"]</xpath>
-          <value><thingDef>VFEM2_CastleWall</thingDef></value>
-        </li>
-        <li Class="PatchOperationAdd">
           <xpath>/Defs/IsoRim.ModelDef[defName="R3D_VFEM2_TimberedWall"]</xpath>
           <value><thingDef>VFEM2_TimberedWall</thingDef></value>
         </li>
