@@ -1,0 +1,82 @@
+# vfem2_walls_plants_draughts.mtl - self-contained. stuff* = tinted by stuff (same values as isorim.mtl); leaf_ = IsoRim seasonal leaves; bark_ = stays year-round (grape vines + grapes); others fixed
+newmtl bark_grape
+Kd 0.400 0.290 0.170
+
+newmtl bark_grape_fruit
+Kd 0.360 0.270 0.440
+
+newmtl bark_grape_fruit_dk
+Kd 0.240 0.180 0.300
+
+newmtl draught_bone
+Kd 0.860 0.840 0.780
+
+newmtl draught_cork
+Kd 0.620 0.460 0.280
+
+newmtl draught_glass
+Kd 0.800 0.860 0.880
+
+newmtl draught_label
+Kd 0.950 0.940 0.900
+
+newmtl draught_stopper
+Kd 0.240 0.240 0.260
+
+newmtl leaf_grape
+Kd 0.520 0.560 0.280
+
+newmtl leaf_grape_dk
+Kd 0.400 0.440 0.220
+
+newmtl liq_amnesia
+Kd 0.780 0.840 0.860
+
+newmtl liq_antitox
+Kd 0.300 0.760 0.780
+
+newmtl liq_coma
+Kd 0.180 0.360 0.780
+
+newmtl liq_efficiency
+Kd 0.360 0.370 0.380
+
+newmtl liq_fertility
+Kd 0.880 0.640 0.880
+
+newmtl liq_focus
+Kd 0.400 0.860 0.840
+
+newmtl liq_healing
+Kd 0.780 0.220 0.200
+
+newmtl liq_immunization
+Kd 0.920 0.580 0.300
+
+newmtl liq_inspiration
+Kd 0.960 0.880 0.480
+
+newmtl liq_painkiller
+Kd 0.700 0.880 0.940
+
+newmtl liq_poison
+Kd 0.360 0.420 0.300
+
+newmtl liq_stoneskin
+Kd 0.620 0.630 0.640
+
+newmtl liq_strength
+Kd 0.500 0.120 0.120
+
+newmtl liq_torturer
+Kd 0.480 0.320 0.520
+
+newmtl stuff
+Kd 1.000 1.000 1.000
+
+newmtl stuff_dark
+Kd 0.800 0.800 0.800
+
+newmtl wall_plaster
+Kd 0.900 0.880 0.820
+

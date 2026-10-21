@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- IsoRim Waylith models for VFE Medieval 2's walls, grape plant and draughts (Grok, coop delivery
+       20261020-2241 VFEM2_Walls_Plants_Draughts). Format as Defs\VFEM2_Models.xml. -->
+
+  <!-- Low castle walls (intact and damaged): linked as IsoRim's fence, the post filling the cell and an arm toward each
+       neighbour it joins (built pointing north). Built for walls 1.65 tall; wallFit keeps them in step with the walls drawn
+       now. The full-height walls (castle, damaged castle, timbered, palisade, cloth) keep IsoRim's wall block for now: a
+       wall drawn from a model is not cut down by the cut-away (the low walls never are). -->
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_LowCastleWall</defName>
+    <thingDef>VFEM2_LowCastleWall</thingDef>
+    <models>
+      <li>Models/vfem2_low_castle_wall_post.obj</li>
+      <li>Models/vfem2_low_castle_wall_arm.obj</li>
+    </models>
+    <linked>true</linked>
+    <wallFit>1.65</wallFit>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_DamagedLowCastleWall</defName>
+    <thingDef>VFEM2_DamagedLowCastleWall</thingDef>
+    <models>
+      <li>Models/vfem2_low_castle_wall_damaged_post.obj</li>
+      <li>Models/vfem2_low_castle_wall_damaged_arm.obj</li>
+    </models>
+    <linked>true</linked>
+    <wallFit>1.65</wallFit>
+  </IsoRim.ModelDef>
+
+  <!-- Grape plant: two variants as the game's Graphic_Random, scaled by growth; leaf* parts drop while leafless. -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_Plant_Grape</defName>
+    <thingDef>VFEM2_Plant_Grape</thingDef>
+    <models>
+      <li>Models/vfem2_grape_1.obj</li>
+      <li>Models/vfem2_grape_2.obj</li>
+    </models>
+    <surfaceHeight>0.00</surfaceHeight>
+    <randomRotation>true</randomRotation>
+    <scaleJitter>0.10</scaleJitter>
+    <growthScale>true</growthScale>
+    <scatter>0.16</scatter>
+    <groundShadow>false</groundShadow>
+  </IsoRim.ModelDef>
+
+  <!-- Draughts: small bottles, fixed colours; as IsoRim's drugs, used while items are not made from their own art. -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_HealingDraught</defName>
+    <thingDef>VFEM2_HealingDraught</thingDef>
+    <model>Models/vfem2_draught_healing.obj</model>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_ImmunizationDraught</defName>
+    <thingDef>VFEM2_ImmunizationDraught</thingDef>
+    <model>Models/vfem2_draught_immunization.obj</model>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_StrengthDraught</defName>
+    <thingDef>VFEM2_StrengthDraught</thingDef>
+    <model>Models/vfem2_draught_strength.obj</model>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_EfficiencyDraught</defName>
+    <thingDef>VFEM2_EfficiencyDraught</thingDef>
+    <model>Models/vfem2_draught_efficiency.obj</model>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_PainkillerDraught</defName>
+    <thingDef>VFEM2_PainkillerDraught</thingDef>
+    <model>Models/vfem2_draught_painkiller.obj</model>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_TorturerDraught</defName>
+    <thingDef>VFEM2_TorturerDraught</thingDef>
+    <model>Models/vfem2_draught_torturer.obj</model>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_FocusDraught</defName>
+    <thingDef>VFEM2_FocusDraught</thingDef>
+    <model>Models/vfem2_draught_focus.obj</model>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_FertilityDraught</defName>
+    <thingDef>VFEM2_FertilityDraught</thingDef>
+    <model>Models/vfem2_draught_fertility.obj</model>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_InspirationDraught</defName>
+    <thingDef>VFEM2_InspirationDraught</thingDef>
+    <model>Models/vfem2_draught_inspiration.obj</model>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_StoneskinDraught</defName>
+    <thingDef>VFEM2_StoneskinDraught</thingDef>
+    <model>Models/vfem2_draught_stoneskin.obj</model>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_AmnesiaDraught</defName>
+    <thingDef>VFEM2_AmnesiaDraught</thingDef>
+    <model>Models/vfem2_draught_amnesia.obj</model>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_ComaDraught</defName>
+    <thingDef>VFEM2_ComaDraught</thingDef>
+    <model>Models/vfem2_draught_coma.obj</model>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_PoisonDraught</defName>
+    <thingDef>VFEM2_PoisonDraught</thingDef>
+    <model>Models/vfem2_draught_poison.obj</model>
+  </IsoRim.ModelDef>
+
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_AntitoxDraught</defName>
+    <thingDef>VFEM2_AntitoxDraught</thingDef>
+    <model>Models/vfem2_draught_antitox.obj</model>
+  </IsoRim.ModelDef>
+
+</Defs>
