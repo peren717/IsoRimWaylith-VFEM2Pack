@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- VFE Medieval 2's cobblestone wall on IsoRim's wall path (IsoRim Api 11 wall tops, as the castle walls): VFEM2 makes
+       one wall def per stone chunk at load (VFEM2_CobblestoneWall_<chunk>, modded stones too), all drawn with the same
+       atlas, so this entry binds them by that texture path (IsoRim Api 16 graphicPath). It names no thing and no path here
+       (IsoRim skips such an entry, and an older IsoRim does not know graphicPath or wallTop); Patches\VFEM2_Cobblestone.xml
+       gives it its graphicPath and wallTop when IsoRim has Api 16. -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_CobblestoneWall</defName>
+  </IsoRim.ModelDef>
+
+</Defs>
