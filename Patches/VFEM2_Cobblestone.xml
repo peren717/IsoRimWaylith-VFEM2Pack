@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- VFE Medieval 2's cobblestone walls (one per stone chunk, all on CobblestoneWall_Atlas) as IsoRim wall blocks with
+       VFEM2's own stone face, like the castle walls (Patches\VFEM2_CastleWalls.xml). Only when IsoRim has Api 16 or later
+       (graphicPath binds every generated chunk variant): an older IsoRim keeps its plain blocks.
+       A full wall (VFEM2 fill 1) with a plain flat top, as the atlas draws it. The side texture is cut at run time from the
+       atlas' run tile (nothing of VFEM2's art is shipped here): the stone band under the top, 120 px wide (the band repeats
+       every 120 px) and 39 px high, laid one cell across and 0.33 up (five courses on a 1.65 wall, about as square as in
+       the atlas). Coloured by the wall's own colour (the chunk's), x 0.87 as the castle walls. -->
+  <Operation Class="IsoRimVFEM2Pack.PatchOperation_IfIsoRimApi">
+    <minVersion>16</minVersion>
+    <apply Class="PatchOperationAdd">
+      <xpath>/Defs/IsoRim.ModelDef[defName="R3D_VFEM2_CobblestoneWall"]</xpath>
+      <value>
+        <graphicPath>Things/Building/Linked/CobblestoneWall/CobblestoneWall_Atlas</graphicPath>
+        <wallTop>
+          <height>1.65</height>
+          <rule>None</rule>
+          <texture>Things/Building/Linked/CobblestoneWall/CobblestoneWall_Atlas</texture>
+          <strips>
+            <li><x>340</x><y>254</y><width>120</width><height>39</height></li>
+          </strips>
+          <tile>(1.0, 0.33)</tile>
+          <brightness>0.87</brightness>
+          <topShade>0.92</topShade>
+        </wallTop>
+      </value>
+    </apply>
+  </Operation>
+</Patch>
