@@ -146,4 +146,16 @@
     </apply>
   </Operation>
 
+  <!-- Api 51: the tabard rests on the armour and collars under it (ApparelModelDef.fitLift): its straps rise over
+       collars and follow the pauldrons down the shoulder instead of a flat shelf pushed out sideways. -->
+  <Operation Class="IsoRimVFEM2Pack.PatchOperation_IfIsoRimApi">
+    <minVersion>51</minVersion>
+    <apply Class="PatchOperationAdd">
+      <xpath>/Defs/IsoRim.ApparelModelDef[defName="R3DApparel_VFEM2_Tabard"]</xpath>
+      <value>
+        <fitLift>true</fitLift>
+      </value>
+    </apply>
+  </Operation>
+
 </Patch>
