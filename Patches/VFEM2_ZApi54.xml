@@ -4,7 +4,7 @@
   <!-- What needs IsoRim Api 54 (the file's name keeps it after VFEM2_Apparel.xml, which adds the helmet's binding).
        The heraldic standard (its ModelDef is in Defs/VFEM2_Models.xml, bound to nothing until here): built upright, held as built, carried standing in front of the figure, lying as its sprite on the
        ground (scale: the sprite's length; the pole is longer than the sprite's), its heraldry on standard_cloth (Source/Heraldry.cs).
-       carryStand: clear of every figure, hair and hat (tools/standard_clearance.py, a gap of at least 0.02 on all builds).
+       carryStand: on the right-hand side, the closest to the body clear of every figure, hair and hat on all builds (tools/standard_clearance.py, gap 0.016).
        The heavy plate helmet: its open model in the state Source/OpenHelmet.cs names, the face showing. -->
   <Operation Class="IsoRimVFEM2Pack.PatchOperation_IfIsoRimApi">
     <minVersion>54</minVersion>
@@ -16,7 +16,7 @@
             <thingDef>VFEM2_MeleeWeapon_Standard</thingDef>
             <holdAsBuilt>true</holdAsBuilt>
             <bakedItem>true</bakedItem>
-            <carryStand>(0.11, 0.007, 0.46)</carryStand>
+            <carryStand>(0.40, 0.007, 0.10)</carryStand>
             <carryLean>6</carryLean>
           </value>
         </li>
