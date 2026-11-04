@@ -53,3 +53,6 @@ Kd 0.720 0.660 0.540
 newmtl torch_wood
 Kd 0.420 0.300 0.160
 
+
+newmtl stuff_plate_gorget
+Kd 0.420 0.420 0.420

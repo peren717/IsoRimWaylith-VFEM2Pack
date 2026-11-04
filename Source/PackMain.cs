@@ -13,6 +13,9 @@ namespace IsoRimVFEM2Pack
     //  - Heraldic standing banner: VEF's DynamicGraphicBuilding draws its own flat sprites (cloth, pattern, symbol) in
     //    place of the game's body sprite, so IsoRim cannot hold that back; it is left out while the model stands in, and
     //    its heraldry goes on the model's cloth (Heraldry.cs).
+    //  - Heraldic standard (a weapon of VEF's DynamicGraphicThing): VEF draws it straight to Unity, in hand and on the ground; both
+    //    are handed to the model, its heraldry on the cloth (Heraldry.cs).
+    //  - Heavy plate helmet: its open model while VFE Medieval 2 shows its _Open sprite (OpenHelmet.cs).
     // VEF types are found by name, so nothing here stops the pack loading if VEF changes; a missing type or member just
     // leaves that part off (logged once).
     [StaticConstructorOnStartup]
@@ -69,6 +72,13 @@ namespace IsoRimVFEM2Pack
                 if (IsoRim.Api.Version >= 53)
                 {
                     Heraldry.SetupBanner(new Harmony("peren.isorimwaylith.vfem2pack.banner"));
+                }
+                // The heraldic standard's model in hand and on the ground, the plate helmet's open visor: IsoRim Api 54; older: the
+                // standard stays the game's flat sprite (as before) and the helmet stays closed.
+                if (IsoRim.Api.Version >= 54)
+                {
+                    Heraldry.SetupStandard(new Harmony("peren.isorimwaylith.vfem2pack.standard"));
+                    OpenHelmet.Setup(new Harmony("peren.isorimwaylith.vfem2pack.openhelmet"));
                 }
             }
             catch (Exception e)

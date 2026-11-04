@@ -57,6 +57,16 @@
     <builtFor>(1, 1)</builtFor>
   </IsoRim.ModelDef>
 
+  <!-- Heraldic standard: bound by Patches/VFEM2_ZApi54.xml with an IsoRim that has Api 54 (no thingDef here: an older IsoRim leaves it out,
+       the game's sprite stays). In Defs, so that the model file is found in this mod's folder. -->
+  <IsoRim.ModelDef>
+    <defName>R3D_VFEM2_MeleeWeapon_Standard</defName>
+    <model>Models/vfem2_standard.obj</model>
+    <scale>0.76</scale>
+    <layFlat>true</layFlat>
+    <offset>(0, 0, -0.9)</offset>
+  </IsoRim.ModelDef>
+
   <IsoRim.ModelDef>
     <defName>R3D_VFEM2_AutofillShelf</defName>
     <thingDef>VFEM2_AutofillShelf</thingDef>

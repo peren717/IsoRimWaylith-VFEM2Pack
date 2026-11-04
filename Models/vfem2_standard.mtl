@@ -1,0 +1,9 @@
+# vfem2_standard.mtl - colours sampled from VFE Medieval 2 Standard.png; standard_cloth is the part heraldry goes on
+newmtl standard_cloth
+Kd 0.950 0.950 0.940
+
+newmtl standard_iron
+Kd 0.560 0.550 0.570
+
+newmtl standard_wood
+Kd 0.520 0.380 0.260

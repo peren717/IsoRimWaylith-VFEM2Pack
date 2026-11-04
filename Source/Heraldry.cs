@@ -226,6 +226,75 @@ namespace IsoRimVFEM2Pack
             }
         }
 
+        // ---- the heraldic standard (IsoRim Api 54; older: never set up, it stays the game's flat sprite)
+
+        // A weapon of VEF's DynamicGraphicThing: its own Thing.DrawAt on the ground and, in hand, a prefix on the game's
+        // DrawEquipmentAiming drawing straight to Unity, field and symbol as for the banner. The draw in hand is given to IsoRim
+        // (CatchWeaponDraws: only while the weapon shows its model), the one on the ground left out while the model stands in;
+        // the heraldry is printed on the cloth as for the banner, from the tags 2D reads: the item's own, else its bearer's, so it
+        // is asked again on an edit and on equipping and dropping it.
+        private const string StandardDef = "VFEM2_MeleeWeapon_Standard";
+        private const string StandardCloth = "standard_cloth";
+
+        // The cloth in the mask (columns 96 to 158, rows 43 to 144 from the top) and in the model (vfem2_standard.obj, one unit
+        // to the sprite's cell, 128 px; tools/make_standardhelm.py): the sprite's own shape and size, on a longer pole.
+        private static readonly Rect StandardSpriteCloth = new Rect(96f / 256f, 1f - 145f / 256f, 63f / 256f, 102f / 256f);
+        private const float StandardClothWidth = 0.4844f, StandardClothBottom = 1.2506f, StandardClothTop = 2.0397f, StandardMiddle = 1.3756f;
+
+        private static MethodInfo thingGraphics;
+
+        // (tests) decals handed out for standards.
+        public static int StandardGiven;
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+        public static void SetupStandard(Harmony h)
+        {
+            Type thing = AccessTools.TypeByName("VEF.Graphics.DynamicGraphicThing");
+            Type patches = AccessTools.TypeByName("VEF.Graphics.VanillaExpandedFramework_DynamicGraphicPatches");
+            MethodInfo inHand = patches != null ? AccessTools.Method(patches, "DrawEquipmentAimingPrefix") : null;
+            thingGraphics = thing != null ? AccessTools.Method(thing, "GetDynamicGraphics") : null;
+            MethodInfo drawAt = thing != null ? AccessTools.DeclaredMethod(thing, "DrawAt") : null;
+            MethodInfo changed = thing != null ? AccessTools.DeclaredMethod(thing, "Notify_ColorChanged") : null;
+            MethodInfo equipped = thing != null ? AccessTools.DeclaredMethod(thing, "Notify_Equipped") : null;
+            MethodInfo unequipped = thing != null ? AccessTools.DeclaredMethod(thing, "Notify_Unequipped") : null;
+            ThingDef def = DefDatabase<ThingDef>.GetNamedSilentFail(StandardDef);
+            if (inHand == null || drawAt == null || changed == null || equipped == null || unequipped == null || def == null
+                || thingGraphics == null || thingGraphics.ReturnType != typeof(List<Graphic>))
+            {
+                Log.Warning(Tag + "VE Framework's dynamic graphics or the heraldic standard not found: the standard stays the game's sprite in 3D.");
+                return;
+            }
+            IsoRim.Api.CatchWeaponDraws(inHand);
+            // An explicit new delegate, as for the tabard above.
+            IsoRim.Api.AddModelDecals(def, StandardCloth, new IsoRim.ModelDecalProvider(StandardDecals));
+            h.Patch(drawAt, prefix: new HarmonyMethod(typeof(PackMain), nameof(PackMain.DynamicDrawAt_Prefix)));
+            HarmonyMethod refresh = new HarmonyMethod(typeof(Heraldry), nameof(ColorChanged_Postfix));
+            h.Patch(changed, postfix: refresh);
+            h.Patch(equipped, postfix: refresh);
+            h.Patch(unequipped, postfix: refresh);
+        }
+
+        private static void StandardDecals(Thing standard, List<IsoRim.ModelDecal> decals)
+        {
+            List<Graphic> graphics = (List<Graphic>)thingGraphics.Invoke(standard, null);
+            foreach (Graphic g in graphics)
+            {
+                Material m = g.MatAt(Rot4.North);
+                Texture2D mask = m != null && m.HasProperty(ShaderPropertyIDs.MaskTex) ? m.GetTexture(ShaderPropertyIDs.MaskTex) as Texture2D : null;
+                if (mask != null && mask != BaseContent.BlackTex && mask != BaseContent.WhiteTex)
+                {
+                    Both(decals, null, mask, g, new Vector2(0f, (StandardClothBottom + StandardClothTop) / 2f),
+                        new Vector2(StandardClothWidth, StandardClothTop - StandardClothBottom), StandardSpriteCloth, true);
+                }
+                else if (m != null && g.path != standard.def.graphicData.texPath && m.mainTexture is Texture2D symbol)
+                {
+                    Vector3 off = g.DrawOffset(Rot4.North);
+                    Both(decals, symbol, null, g, new Vector2(off.x, StandardMiddle + off.z), g.drawSize, new Rect(0f, 0f, 1f, 1f), false);
+                }
+            }
+            StandardGiven += decals.Count;
+        }
+
         private static void Both(List<IsoRim.ModelDecal> decals, Texture2D texture, Texture2D mask, Graphic g, Vector2 centre, Vector2 size, Rect source, bool spread)
         {
             decals.Add(new IsoRim.ModelDecal { texture = texture, mask = mask, colour = g.color, colourTwo = g.colorTwo, side = IsoRim.DecalSide.Front, centre = centre, size = size, source = source, spread = spread });
