@@ -11,7 +11,8 @@ namespace IsoRimVFEM2Pack
     //    (working or finished), through IsoRim's Api.AddModelState; the processor's flat working/finished overlays are
     //    left out while a 3D model stands in for the body.
     //  - Heraldic standing banner: VEF's DynamicGraphicBuilding draws its own flat sprites (cloth, pattern, symbol) in
-    //    place of the game's body sprite, so IsoRim cannot hold that back; it is left out while the model stands in.
+    //    place of the game's body sprite, so IsoRim cannot hold that back; it is left out while the model stands in, and
+    //    its heraldry goes on the model's cloth (Heraldry.cs).
     // VEF types are found by name, so nothing here stops the pack loading if VEF changes; a missing type or member just
     // leaves that part off (logged once).
     [StaticConstructorOnStartup]
@@ -63,6 +64,11 @@ namespace IsoRimVFEM2Pack
                 if (IsoRim.Api.Version >= 10)
                 {
                     Heraldry.Setup();
+                }
+                // Heraldry on the 3D standing banner: needs IsoRim's model decals (Api 53); older: the banner's plain cloth.
+                if (IsoRim.Api.Version >= 53)
+                {
+                    Heraldry.SetupBanner(new Harmony("peren.isorimwaylith.vfem2pack.banner"));
                 }
             }
             catch (Exception e)

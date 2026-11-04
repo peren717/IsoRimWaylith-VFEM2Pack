@@ -48,8 +48,8 @@
     <flameSize>(0.85, 0.75)</flameSize>
   </IsoRim.ModelDef>
 
-  <!-- Heraldic standing banner: the cloth (banner_cloth_tint) stays white; the game's flat heraldry sprites are left out
-       while the model stands in (the pack's assembly). -->
+  <!-- Heraldic standing banner: the game's flat heraldry sprites are left out while the model stands in; with IsoRim Api 53
+       the heraldry is printed on the cloth (banner_cloth_tint), else the cloth stays white (the pack's assembly). -->
   <IsoRim.ModelDef>
     <defName>R3D_VFEM2_StandingBanner</defName>
     <thingDef>VFEM2_StandingBanner</thingDef>

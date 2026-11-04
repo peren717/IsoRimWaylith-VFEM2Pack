@@ -157,5 +157,80 @@ namespace IsoRimVFEM2Pack
             });
             Given++;
         }
+
+        // ---- the standing banner (IsoRim Api 53 model decals; an older IsoRim: never set up, the cloth stays plain)
+
+        // VEF's DynamicGraphicBuilding draws two graphics in 2D: the field (the banner sprite with the two-colour mask of the
+        // pattern, CutoutComplex) and the symbol (Cutout). Both are asked for as 2D asks them (GetDynamicGraphics: the item's own
+        // tags, else its faction's, else plain), when IsoRim builds the model, and printed on the cloth: the field's mask only (the
+        // sprite's frame and shading are the model's job), front and back alike, so the back reads as the front does. The graphics
+        // change only through Notify_ColorChanged (VEF's cache; VFEM2's heraldry dialog calls it on everything), so that asks IsoRim
+        // to build the model again.
+        private const string BannerDef = "VFEM2_StandingBanner";
+        private const string BannerCloth = "banner_cloth_tint";
+
+        // The cloth in the 256 px mask (columns 86 to 169, rows 38 to 158 from the top, and its tabs up to row 24) ...
+        private static readonly Rect SpriteCloth = new Rect(86f / 256f, 1f - 158f / 256f, 83f / 256f, 134f / 256f);
+        private const float SpriteClothRows = 120f / 256f;
+        // ... and in the model (vfem2_standing_banner.obj): 0.72 across, 0.66 to 1.68 up, its tabs elsewhere than the sprite's
+        // (the field spreads: its colours reach them, and the corners the sprite rounds off).
+        private const float ClothWidth = 0.72f, ClothBottom = 0.66f, ClothTop = 1.68f;
+
+        private static MethodInfo dynamicGraphics;
+
+        // (tests) decals handed out for banners.
+        public static int BannerGiven;
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+        public static void SetupBanner(Harmony h)
+        {
+            Type building = AccessTools.TypeByName("VEF.Graphics.DynamicGraphicBuilding");
+            dynamicGraphics = building != null ? AccessTools.Method(building, "GetDynamicGraphics") : null;
+            MethodInfo changed = building != null ? AccessTools.DeclaredMethod(building, "Notify_ColorChanged") : null;
+            ThingDef def = DefDatabase<ThingDef>.GetNamedSilentFail(BannerDef);
+            if (dynamicGraphics == null || changed == null || def == null || dynamicGraphics.ReturnType != typeof(List<Graphic>))
+            {
+                Log.Warning(Tag + "VE Framework's dynamic graphics or the standing banner not found: the banner keeps its plain cloth in 3D.");
+                return;
+            }
+            // An explicit new delegate, as for the tabard above.
+            IsoRim.Api.AddModelDecals(def, BannerCloth, new IsoRim.ModelDecalProvider(BannerDecals));
+            h.Patch(changed, postfix: new HarmonyMethod(typeof(Heraldry), nameof(ColorChanged_Postfix)));
+        }
+
+        public static void ColorChanged_Postfix(Thing __instance)
+        {
+            IsoRim.Api.RefreshModelDecals(__instance);
+        }
+
+        private static void BannerDecals(Thing banner, List<IsoRim.ModelDecal> decals)
+        {
+            List<Graphic> graphics = (List<Graphic>)dynamicGraphics.Invoke(banner, null);
+            // Model units per sprite cell (the sprite's 256 px are 2 cells), and where the sprite's middle lands on the cloth.
+            float across = ClothWidth / (SpriteCloth.width * 2f), up = (ClothTop - ClothBottom) / (SpriteClothRows * 2f);
+            float middle = ClothBottom + (0.5f - SpriteCloth.y) * 2f * up;
+            foreach (Graphic g in graphics)
+            {
+                Material m = g.MatAt(Rot4.North);
+                Texture2D mask = m != null && m.HasProperty(ShaderPropertyIDs.MaskTex) ? m.GetTexture(ShaderPropertyIDs.MaskTex) as Texture2D : null;
+                if (mask != null && mask != BaseContent.BlackTex && mask != BaseContent.WhiteTex)
+                {
+                    float height = SpriteCloth.height * 2f * up;
+                    Both(decals, null, mask, g, new Vector2(0f, ClothBottom + height / 2f), new Vector2(ClothWidth, height), SpriteCloth, true);
+                }
+                else if (m != null && g.path != banner.def.graphicData.texPath && m.mainTexture is Texture2D symbol)
+                {
+                    Vector3 off = g.DrawOffset(Rot4.North);
+                    Both(decals, symbol, null, g, new Vector2(off.x * across, middle + off.z * up), new Vector2(g.drawSize.x * across, g.drawSize.y * up), new Rect(0f, 0f, 1f, 1f), false);
+                }
+            }
+        }
+
+        private static void Both(List<IsoRim.ModelDecal> decals, Texture2D texture, Texture2D mask, Graphic g, Vector2 centre, Vector2 size, Rect source, bool spread)
+        {
+            decals.Add(new IsoRim.ModelDecal { texture = texture, mask = mask, colour = g.color, colourTwo = g.colorTwo, side = IsoRim.DecalSide.Front, centre = centre, size = size, source = source, spread = spread });
+            decals.Add(new IsoRim.ModelDecal { texture = texture, mask = mask, colour = g.color, colourTwo = g.colorTwo, side = IsoRim.DecalSide.Back, centre = centre, size = size, source = source, spread = spread });
+            BannerGiven += 2;
+        }
     }
 }
