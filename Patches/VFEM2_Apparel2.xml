@@ -158,4 +158,16 @@
     </apply>
   </Operation>
 
+  <!-- Api 60: the tabard is two panels open at the sides (ApparelModelDef.fitKeepWidth): lifted over what is under it as above,
+       but it keeps its own width instead of being stretched to the pauldrons. -->
+  <Operation Class="IsoRimVFEM2Pack.PatchOperation_IfIsoRimApi">
+    <minVersion>60</minVersion>
+    <apply Class="PatchOperationAdd">
+      <xpath>/Defs/IsoRim.ApparelModelDef[defName="R3DApparel_VFEM2_Tabard"]</xpath>
+      <value>
+        <fitKeepWidth>true</fitKeepWidth>
+      </value>
+    </apply>
+  </Operation>
+
 </Patch>
